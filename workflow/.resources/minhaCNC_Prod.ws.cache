@@ -5654,7 +5654,7 @@
        <string>F4FDB22B-E704-4856-9DBD-0D63AFDAFCEB</string>
       </void>
       <void property="accessCount">
-       <int>1459</int>
+       <int>1492</int>
       </void>
       <void property="additionalComments">
        <string></string>
@@ -10565,7 +10565,7 @@
     <void method="add">
      <object class="com.totvs.tds.ecm.foundation.ws.DocumentDto">
       <void property="UUID">
-       <string>0A0EF0AD-110F-4385-BA34-97E002E96E00</string>
+       <string>4B0082F3-4CDF-499B-BE0A-B61ED31A3C44</string>
       </void>
       <void property="accessCount">
        <int>0</int>
@@ -10585,7 +10585,7 @@
       <void property="createDate">
        <object class="com.sun.org.apache.xerces.internal.jaxp.datatype.XMLGregorianCalendarImpl">
         <void property="day">
-         <int>5</int>
+         <int>25</int>
         </void>
         <void property="hour">
          <int>0</int>
@@ -10603,7 +10603,7 @@
          <int>-180</int>
         </void>
         <void property="year">
-         <int>2020</int>
+         <int>2021</int>
         </void>
        </object>
       </void>
@@ -10620,7 +10620,7 @@
        <int>10224</int>
       </void>
       <void property="documentPropertyVersion">
-       <int>7000</int>
+       <int>8000</int>
       </void>
       <void property="documentType">
        <string>4</string>
@@ -10668,7 +10668,7 @@
       <void property="lastModifiedDate">
        <object class="com.sun.org.apache.xerces.internal.jaxp.datatype.XMLGregorianCalendarImpl">
         <void property="day">
-         <int>5</int>
+         <int>25</int>
         </void>
         <void property="hour">
          <int>0</int>
@@ -10686,7 +10686,7 @@
          <int>-180</int>
         </void>
         <void property="year">
-         <int>2020</int>
+         <int>2021</int>
         </void>
        </object>
       </void>
@@ -10734,7 +10734,7 @@
        </object>
       </void>
       <void property="version">
-       <int>7000</int>
+       <int>8000</int>
       </void>
       <void property="versionDescription">
        <string></string>
@@ -10747,7 +10747,7 @@
     <void method="add">
      <object class="com.totvs.tds.ecm.foundation.ws.DocumentDto">
       <void property="UUID">
-       <string>0714BAD8-AB63-4BB0-9D89-67D048871542</string>
+       <string>A03EE726-F8B4-46AF-AC3B-1AD4FCA92155</string>
       </void>
       <void property="accessCount">
        <int>0</int>
@@ -10767,7 +10767,7 @@
       <void property="createDate">
        <object class="com.sun.org.apache.xerces.internal.jaxp.datatype.XMLGregorianCalendarImpl">
         <void property="day">
-         <int>26</int>
+         <int>7</int>
         </void>
         <void property="hour">
          <int>0</int>
@@ -10776,7 +10776,7 @@
          <int>0</int>
         </void>
         <void property="month">
-         <int>1</int>
+         <int>4</int>
         </void>
         <void property="second">
          <int>0</int>
@@ -10802,7 +10802,7 @@
        <int>24718</int>
       </void>
       <void property="documentPropertyVersion">
-       <int>13000</int>
+       <int>15000</int>
       </void>
       <void property="documentType">
        <string>4</string>
@@ -10850,7 +10850,7 @@
       <void property="lastModifiedDate">
        <object class="com.sun.org.apache.xerces.internal.jaxp.datatype.XMLGregorianCalendarImpl">
         <void property="day">
-         <int>26</int>
+         <int>7</int>
         </void>
         <void property="hour">
          <int>0</int>
@@ -10859,7 +10859,7 @@
          <int>0</int>
         </void>
         <void property="month">
-         <int>1</int>
+         <int>4</int>
         </void>
         <void property="second">
          <int>0</int>
@@ -10916,7 +10916,7 @@
        </object>
       </void>
       <void property="version">
-       <int>13000</int>
+       <int>15000</int>
       </void>
       <void property="versionDescription">
        <string></string>
@@ -13740,6 +13740,16 @@
       </void>
      </object>
     </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.GroupDto">
+      <void property="groupDescription">
+       <string>Grupo para Pré análise do processo Outras Entradas</string>
+      </void>
+      <void property="groupId">
+       <string>w_PreAnaliseGERH</string>
+      </void>
+     </object>
+    </void>
    </object>
   </void>
   <void method="put">
@@ -13757,13 +13767,13 @@
    </array>
   </void>
   <void method="put">
-   <string>camposFormulario, documentoId = 10223</string>
+   <string>camposFormulario, documentoId = 10224</string>
    <array class="java.lang.String" length="20">
     <void index="0">
-     <string>autorizador</string>
+     <string>analiseObrigatoria</string>
     </void>
     <void index="1">
-     <string>chefia</string>
+     <string>autorizador</string>
     </void>
     <void index="2">
      <string>codcfo</string>
@@ -13790,25 +13800,25 @@
      <string>DescContrato</string>
     </void>
     <void index="10">
-     <string>IdentificadorFluig</string>
+     <string>gestorcc</string>
     </void>
     <void index="11">
-     <string>IdMov</string>
+     <string>IdentificadorFluig</string>
     </void>
     <void index="12">
-     <string>n_solicitacao</string>
+     <string>IdMov</string>
     </void>
     <void index="13">
-     <string>nivelAprov</string>
+     <string>n_solicitacao</string>
     </void>
     <void index="14">
-     <string>NSeqItmMov</string>
+     <string>nivelAprov</string>
     </void>
     <void index="15">
-     <string>numeroMov</string>
+     <string>NSeqItmMov</string>
     </void>
     <void index="16">
-     <string>qtdRateio</string>
+     <string>numeroMov</string>
     </void>
     <void index="17">
      <string>solicitante</string>
@@ -13817,68 +13827,6 @@
      <string>TipoAprovacao</string>
     </void>
     <void index="19">
-     <string>valorliquido</string>
-    </void>
-   </array>
-  </void>
-  <void method="put">
-   <string>camposFormulario, documentoId = 10224</string>
-   <array class="java.lang.String" length="19">
-    <void index="0">
-     <string>autorizador</string>
-    </void>
-    <void index="1">
-     <string>codcfo</string>
-    </void>
-    <void index="2">
-     <string>CodColigada</string>
-    </void>
-    <void index="3">
-     <string>codFilial</string>
-    </void>
-    <void index="4">
-     <string>codHistorico</string>
-    </void>
-    <void index="5">
-     <string>codHistoricoLongo</string>
-    </void>
-    <void index="6">
-     <string>CodPrj</string>
-    </void>
-    <void index="7">
-     <string>dataEmissao</string>
-    </void>
-    <void index="8">
-     <string>DescContrato</string>
-    </void>
-    <void index="9">
-     <string>gestorcc</string>
-    </void>
-    <void index="10">
-     <string>IdentificadorFluig</string>
-    </void>
-    <void index="11">
-     <string>IdMov</string>
-    </void>
-    <void index="12">
-     <string>n_solicitacao</string>
-    </void>
-    <void index="13">
-     <string>nivelAprov</string>
-    </void>
-    <void index="14">
-     <string>NSeqItmMov</string>
-    </void>
-    <void index="15">
-     <string>numeroMov</string>
-    </void>
-    <void index="16">
-     <string>solicitante</string>
-    </void>
-    <void index="17">
-     <string>TipoAprovacao</string>
-    </void>
-    <void index="18">
      <string>valorliquido</string>
     </void>
    </array>

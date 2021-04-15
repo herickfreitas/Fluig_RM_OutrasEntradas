@@ -114,6 +114,13 @@ function atualizaEtapaWorkflow(){
 		hAPI.setCardValue("gestorcc", chefe);
 		
 		
+		var FlganaliseObrigatoria = datasetReturned.getValue(0, "Flg_Analise");
+		log.info("==========[ atualizaEtapaWorkflow createDataset chefe ]========== " + chefe);        
+        
+        // Gravando retorno no formulário		
+		hAPI.setCardValue("analiseObrigatoria", FlganaliseObrigatoria);
+		
+		
 		
 		// Atribuido valor na variável autorizador
     	if (ccusto.substring(0,11) == ('12.01.02.01'))
@@ -155,8 +162,7 @@ function atualizaEtapaWorkflow(){
     
     	// Gravando retorno no formulário		
 		hAPI.setCardValue("nivelAprov", faixa);
-    	
-		
+
 		}
 	
 	catch (e)
