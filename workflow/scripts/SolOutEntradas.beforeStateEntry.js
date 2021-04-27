@@ -115,40 +115,49 @@ function atualizaEtapaWorkflow(){
 		
 		
 		var FlganaliseObrigatoria = datasetReturned.getValue(0, "Flg_Analise");
-		log.info("==========[ atualizaEtapaWorkflow createDataset chefe ]========== " + chefe);        
+		  
+		
+		 // Rodando novo dataset para coletar id tipo produto
+        var cmov = DatasetFactory.createConstraint("IDMOV", id_mov, id_mov, ConstraintType.MUST);
+        var constraintsProd = new Array(cmov);
+        
+        // Executando chamada de dataset
+        var datasetReturnedProd = DatasetFactory.getDataset("_RM_TITMMOV", null, constraintsProd, null);
+        
+        if ( datasetReturnedProd.getValue(0, "IDPRD") == 15296 )
+        {
+        	FlganaliseObrigatoria = 0;
+        }
+        
         
         // Gravando retorno no formulário		
 		hAPI.setCardValue("analiseObrigatoria", FlganaliseObrigatoria);
 		
+				
+	  	/////////////////////////////////////////////
+	  	//		ATRIBUINDO GRUPO AUTORIZADOR 	   //
+	  	/////////////////////////////////////////////
 		
+        // Rodando novo dataset para coletar responsável do centro de custo
+        var a1 = DatasetFactory.createConstraint("CODCCUSTO", ccusto, ccusto, ConstraintType.MUST);
+        var constraints = new Array(a1);
+        log.info("==========[ selecionaAutorizador constraints ]========== " + constraints);
+        
+        // Executando chamada de dataset
+        var datasetReturn = DatasetFactory.getDataset("_RM_CCUSTO_AUTORIZADOR", null, constraints, null);
 		
-		// Atribuido valor na variável autorizador
-    	if (ccusto.substring(0,11) == ('12.01.02.01'))
-    		var autorizador = 'Pool:Group:w_SG'; // COMO SG - SIMONEGUIMARAES
-    		
-    	else if (ccusto == ('20.01.02.08.70080'))
-    		var autorizador = 'Pool:Group:w_VPF'; // COMO VPF - LEANDROPINTO		
-    	
-    	else if (ccusto.substring(0,8) == ('20.01.01'))
-    			var autorizador = 'Pool:Group:w_VPF'; // COMO VPF - LEANDROPINTO
-    		
-    	else if (ccusto.substring(0,2) == ('12') || ccusto.substring(0,2) == ('13') || ccusto.substring(0,2) == ('14') || 
-    			ccusto.substring(0,2) == ('15') || ccusto.substring(0,2) == ('16'))
-    		var autorizador = 'Pool:Group:w_GP'; // COMO GP - LenouraSchmidt
-    	
-    	else if (ccusto.substring(0,2) == ('11') || ccusto.substring(0,2) == ('18') || ccusto.substring(0,2) == ('50') || 
-    			ccusto.substring(0,2) == ('90') || ccusto.substring(0,2) == ('99'))
-    		var autorizador = 'Pool:Group:w_VPF'; // COMO VPF - LEANDROPINTO
-    	
-    	else
-    		var autorizador = 'Pool:Group:w_SG'; // COMO SG - SIMONEGUIMARAES
+		// Retirando o campo do resultado
+        var autorizador = datasetReturn.getValue(0, "");
+		log.info("==========[ selecionaAutorizador autorizador ]========== " + autorizador); 
     	
     	// Gravando retorno no formulário		
 		hAPI.setCardValue("autorizador", autorizador);
- 
 		
 		
-        // FAIXA DE VALORES PARA APROVAÇÃO		
+	  	/////////////////////////////////////////////////////////////////
+	  	//		ATRIBUINDO FAIXA DE VALORES PARA APROVAÇÃO		 	   //
+	  	/////////////////////////////////////////////////////////////////
+		
         // 1º Retirando o elemento 2º Retirando o conteúdo
         var nodes = xmlResponse.getElementsByTagName("VALORLIQUIDO");
         var VALORLIQUIDO = nodes.item(0).getTextContent();

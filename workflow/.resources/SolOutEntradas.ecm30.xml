@@ -29,7 +29,7 @@
     <processDefinitionVersionPK>
       <companyId>1</companyId>
       <processId>Solicitações de Outras Entradas</processId>
-      <version>11</version>
+      <version>18</version>
     </processDefinitionVersionPK>
     <versionDescription></versionDescription>
     <formId>0</formId>
@@ -215,8 +215,8 @@
       <deadlineFieldName></deadlineFieldName>
       <joint>false</joint>
       <agreementPercentage>0</agreementPercentage>
-      <engineAllocationId>Pool Grupo</engineAllocationId>
-      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;Group&gt;w_PRES&lt;/Group&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
+      <engineAllocationId>Usuário</engineAllocationId>
+      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;User&gt;robertotadros&lt;/User&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
       <selectColleague>1</selectColleague>
       <initialState>false</initialState>
       <notifyAuthorityDelay>true</notifyAuthorityDelay>
@@ -371,8 +371,8 @@
       <deadlineFieldName></deadlineFieldName>
       <joint>false</joint>
       <agreementPercentage>0</agreementPercentage>
-      <engineAllocationId>Pool Grupo</engineAllocationId>
-      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;Group&gt;w_VPF&lt;/Group&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
+      <engineAllocationId>Usuário</engineAllocationId>
+      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;User&gt;leandropinto&lt;/User&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
       <selectColleague>1</selectColleague>
       <initialState>false</initialState>
       <notifyAuthorityDelay>true</notifyAuthorityDelay>
@@ -612,7 +612,7 @@
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
         <expressionOrder>1</expressionOrder>
-        <version>11</version>
+        <version>18</version>
         <sequence>147</sequence>
       </conditionProcessStatePK>
       <condition>false</condition>
@@ -624,7 +624,7 @@
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
         <expressionOrder>2</expressionOrder>
-        <version>11</version>
+        <version>18</version>
         <sequence>147</sequence>
       </conditionProcessStatePK>
       <condition>false</condition>
@@ -636,7 +636,7 @@
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
         <expressionOrder>1</expressionOrder>
-        <version>11</version>
+        <version>18</version>
         <sequence>164</sequence>
       </conditionProcessStatePK>
       <condition>false</condition>
@@ -648,7 +648,7 @@
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
         <expressionOrder>2</expressionOrder>
-        <version>11</version>
+        <version>18</version>
         <sequence>164</sequence>
       </conditionProcessStatePK>
       <condition>false</condition>
@@ -1133,40 +1133,49 @@ function atualizaEtapaWorkflow(){&#xd;
 		&#xd;
 		&#xd;
 		var FlganaliseObrigatoria = datasetReturned.getValue(0, &quot;Flg_Analise&quot;);&#xd;
-		log.info(&quot;==========[ atualizaEtapaWorkflow createDataset chefe ]========== &quot; + chefe);        &#xd;
+		  &#xd;
+		&#xd;
+		 // Rodando novo dataset para coletar id tipo produto&#xd;
+        var cmov = DatasetFactory.createConstraint(&quot;IDMOV&quot;, id_mov, id_mov, ConstraintType.MUST);&#xd;
+        var constraintsProd = new Array(cmov);&#xd;
+        &#xd;
+        // Executando chamada de dataset&#xd;
+        var datasetReturnedProd = DatasetFactory.getDataset(&quot;_RM_TITMMOV&quot;, null, constraintsProd, null);&#xd;
+        &#xd;
+        if ( datasetReturnedProd.getValue(0, &quot;IDPRD&quot;) == 15296 )&#xd;
+        {&#xd;
+        	FlganaliseObrigatoria = 0;&#xd;
+        }&#xd;
+        &#xd;
         &#xd;
         // Gravando retorno no formulário		&#xd;
 		hAPI.setCardValue(&quot;analiseObrigatoria&quot;, FlganaliseObrigatoria);&#xd;
 		&#xd;
+				&#xd;
+	  	/////////////////////////////////////////////&#xd;
+	  	//		ATRIBUINDO GRUPO AUTORIZADOR 	   //&#xd;
+	  	/////////////////////////////////////////////&#xd;
 		&#xd;
+        // Rodando novo dataset para coletar responsável do centro de custo&#xd;
+        var a1 = DatasetFactory.createConstraint(&quot;CODCCUSTO&quot;, ccusto, ccusto, ConstraintType.MUST);&#xd;
+        var constraints = new Array(a1);&#xd;
+        log.info(&quot;==========[ selecionaAutorizador constraints ]========== &quot; + constraints);&#xd;
+        &#xd;
+        // Executando chamada de dataset&#xd;
+        var datasetReturn = DatasetFactory.getDataset(&quot;_RM_CCUSTO_AUTORIZADOR&quot;, null, constraints, null);&#xd;
 		&#xd;
-		// Atribuido valor na variável autorizador&#xd;
-    	if (ccusto.substring(0,11) == (&apos;12.01.02.01&apos;))&#xd;
-    		var autorizador = &apos;Pool:Group:w_SG&apos;; // COMO SG - SIMONEGUIMARAES&#xd;
-    		&#xd;
-    	else if (ccusto == (&apos;20.01.02.08.70080&apos;))&#xd;
-    		var autorizador = &apos;Pool:Group:w_VPF&apos;; // COMO VPF - LEANDROPINTO		&#xd;
-    	&#xd;
-    	else if (ccusto.substring(0,8) == (&apos;20.01.01&apos;))&#xd;
-    			var autorizador = &apos;Pool:Group:w_VPF&apos;; // COMO VPF - LEANDROPINTO&#xd;
-    		&#xd;
-    	else if (ccusto.substring(0,2) == (&apos;12&apos;) || ccusto.substring(0,2) == (&apos;13&apos;) || ccusto.substring(0,2) == (&apos;14&apos;) || &#xd;
-    			ccusto.substring(0,2) == (&apos;15&apos;) || ccusto.substring(0,2) == (&apos;16&apos;))&#xd;
-    		var autorizador = &apos;Pool:Group:w_GP&apos;; // COMO GP - LenouraSchmidt&#xd;
-    	&#xd;
-    	else if (ccusto.substring(0,2) == (&apos;11&apos;) || ccusto.substring(0,2) == (&apos;18&apos;) || ccusto.substring(0,2) == (&apos;50&apos;) || &#xd;
-    			ccusto.substring(0,2) == (&apos;90&apos;) || ccusto.substring(0,2) == (&apos;99&apos;))&#xd;
-    		var autorizador = &apos;Pool:Group:w_VPF&apos;; // COMO VPF - LEANDROPINTO&#xd;
-    	&#xd;
-    	else&#xd;
-    		var autorizador = &apos;Pool:Group:w_SG&apos;; // COMO SG - SIMONEGUIMARAES&#xd;
+		// Retirando o campo do resultado&#xd;
+        var autorizador = datasetReturn.getValue(0, &quot;&quot;);&#xd;
+		log.info(&quot;==========[ selecionaAutorizador autorizador ]========== &quot; + autorizador); &#xd;
     	&#xd;
     	// Gravando retorno no formulário		&#xd;
 		hAPI.setCardValue(&quot;autorizador&quot;, autorizador);&#xd;
- &#xd;
 		&#xd;
 		&#xd;
-        // FAIXA DE VALORES PARA APROVAÇÃO		&#xd;
+	  	/////////////////////////////////////////////////////////////////&#xd;
+	  	//		ATRIBUINDO FAIXA DE VALORES PARA APROVAÇÃO		 	   //&#xd;
+	  	/////////////////////////////////////////////////////////////////&#xd;
+		&#xd;
         // 1º Retirando o elemento 2º Retirando o conteúdo&#xd;
         var nodes = xmlResponse.getElementsByTagName(&quot;VALORLIQUIDO&quot;);&#xd;
         var VALORLIQUIDO = nodes.item(0).getTextContent();&#xd;
@@ -1197,19 +1206,19 @@ function atualizaEtapaWorkflow(){&#xd;
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
         <propertyId>AutomaticTasks</propertyId>
-        <version>11</version>
+        <version>18</version>
       </advancedProcessPropertiesPK>
       <propertieValue></propertieValue>
     </AdvancedProcessProperties>
   </list>
   <list>
     <SwimLane>
-      <color>FFFFFF</color>
-      <height>232</height>
-      <width>959</width>
+      <color>A7FCC0</color>
+      <height>147</height>
+      <width>459</width>
       <positionX>2</positionX>
-      <positionY>135</positionY>
-      <stateName>Gestor Centro de Custo</stateName>
+      <positionY>761</positionY>
+      <stateName>Aprovar</stateName>
       <type>2</type>
       <parentSequence>0</parentSequence>
       <swimLanePK>
@@ -1220,12 +1229,12 @@ function atualizaEtapaWorkflow(){&#xd;
       </swimLanePK>
     </SwimLane>
     <SwimLane>
-      <color>82b0b7</color>
-      <height>147</height>
-      <width>503</width>
-      <positionX>460</positionX>
-      <positionY>761</positionY>
-      <stateName>Reprovar</stateName>
+      <color>FFFFFF</color>
+      <height>395</height>
+      <width>959</width>
+      <positionX>2</positionX>
+      <positionY>367</positionY>
+      <stateName>Autorizadores</stateName>
       <type>2</type>
       <parentSequence>0</parentSequence>
       <swimLanePK>
@@ -1252,12 +1261,12 @@ function atualizaEtapaWorkflow(){&#xd;
       </swimLanePK>
     </SwimLane>
     <SwimLane>
-      <color>FFFFFF</color>
-      <height>395</height>
-      <width>959</width>
-      <positionX>2</positionX>
-      <positionY>367</positionY>
-      <stateName>Autorizadores</stateName>
+      <color>82b0b7</color>
+      <height>147</height>
+      <width>503</width>
+      <positionX>460</positionX>
+      <positionY>761</positionY>
+      <stateName>Reprovar</stateName>
       <type>2</type>
       <parentSequence>0</parentSequence>
       <swimLanePK>
@@ -1268,12 +1277,12 @@ function atualizaEtapaWorkflow(){&#xd;
       </swimLanePK>
     </SwimLane>
     <SwimLane>
-      <color>A7FCC0</color>
-      <height>147</height>
-      <width>459</width>
+      <color>FFFFFF</color>
+      <height>232</height>
+      <width>959</width>
       <positionX>2</positionX>
-      <positionY>761</positionY>
-      <stateName>Aprovar</stateName>
+      <positionY>135</positionY>
+      <stateName>Gestor Centro de Custo</stateName>
       <type>2</type>
       <parentSequence>0</parentSequence>
       <swimLanePK>
@@ -1321,42 +1330,6 @@ function atualizaEtapaWorkflow(){&#xd;
       </processComponGrafPK>
       <stateName>Solicitações provenientes do Sistema RM</stateName>
     </ProcessComponGraf>
-    <ProcessComponGraf>
-      <componType>1</componType>
-      <positionX>140</positionX>
-      <positionY>410</positionY>
-      <processComponGrafPK>
-        <companyId>1</companyId>
-        <processId>SolOutEntradas</processId>
-        <version>1</version>
-        <componGrafSequence>132</componGrafSequence>
-      </processComponGrafPK>
-      <stateName>Pres, SG, VPF e CG</stateName>
-    </ProcessComponGraf>
-    <ProcessComponGraf>
-      <componType>1</componType>
-      <positionX>760</positionX>
-      <positionY>400</positionY>
-      <processComponGrafPK>
-        <companyId>1</companyId>
-        <processId>SolOutEntradas</processId>
-        <version>1</version>
-        <componGrafSequence>158</componGrafSequence>
-      </processComponGrafPK>
-      <stateName>Grupo w_VPF</stateName>
-    </ProcessComponGraf>
-    <ProcessComponGraf>
-      <componType>1</componType>
-      <positionX>720</positionX>
-      <positionY>590</positionY>
-      <processComponGrafPK>
-        <companyId>1</companyId>
-        <processId>SolOutEntradas</processId>
-        <version>1</version>
-        <componGrafSequence>160</componGrafSequence>
-      </processComponGrafPK>
-      <stateName>Grupo w_PRES</stateName>
-    </ProcessComponGraf>
   </list>
   <list>
     <ProcessLinkAssoc>
@@ -1389,43 +1362,13 @@ function atualizaEtapaWorkflow(){&#xd;
       <initialStateSequence>130</initialStateSequence>
       <finalStateSequence>2</finalStateSequence>
     </ProcessLinkAssoc>
-    <ProcessLinkAssoc>
-      <processLinkAssocPK>
-        <companyId>1</companyId>
-        <processId>SolOutEntradas</processId>
-        <version>1</version>
-        <linkSequence>133</linkSequence>
-      </processLinkAssocPK>
-      <initialStateSequence>132</initialStateSequence>
-      <finalStateSequence>123</finalStateSequence>
-    </ProcessLinkAssoc>
-    <ProcessLinkAssoc>
-      <processLinkAssocPK>
-        <companyId>1</companyId>
-        <processId>SolOutEntradas</processId>
-        <version>1</version>
-        <linkSequence>159</linkSequence>
-      </processLinkAssocPK>
-      <initialStateSequence>158</initialStateSequence>
-      <finalStateSequence>149</finalStateSequence>
-    </ProcessLinkAssoc>
-    <ProcessLinkAssoc>
-      <processLinkAssocPK>
-        <companyId>1</companyId>
-        <processId>SolOutEntradas</processId>
-        <version>1</version>
-        <linkSequence>161</linkSequence>
-      </processLinkAssocPK>
-      <initialStateSequence>160</initialStateSequence>
-      <finalStateSequence>135</finalStateSequence>
-    </ProcessLinkAssoc>
   </list>
   <list>
     <ProcessLinkBend>
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
-        <version>11</version>
+        <version>18</version>
         <linkSequence>126</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -1436,7 +1379,7 @@ function atualizaEtapaWorkflow(){&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
-        <version>11</version>
+        <version>18</version>
         <linkSequence>126</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -1447,7 +1390,7 @@ function atualizaEtapaWorkflow(){&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
-        <version>11</version>
+        <version>18</version>
         <linkSequence>142</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -1458,7 +1401,7 @@ function atualizaEtapaWorkflow(){&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
-        <version>11</version>
+        <version>18</version>
         <linkSequence>154</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -1469,7 +1412,7 @@ function atualizaEtapaWorkflow(){&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
-        <version>11</version>
+        <version>18</version>
         <linkSequence>154</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -1480,7 +1423,7 @@ function atualizaEtapaWorkflow(){&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
-        <version>11</version>
+        <version>18</version>
         <linkSequence>154</linkSequence>
         <bendSequence>3</bendSequence>
       </processLinkBendPK>
@@ -1491,7 +1434,7 @@ function atualizaEtapaWorkflow(){&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
-        <version>11</version>
+        <version>18</version>
         <linkSequence>154</linkSequence>
         <bendSequence>4</bendSequence>
       </processLinkBendPK>
@@ -1502,18 +1445,18 @@ function atualizaEtapaWorkflow(){&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
-        <version>11</version>
+        <version>18</version>
         <linkSequence>156</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
-      <positionX>109</positionX>
-      <positionY>75</positionY>
+      <positionX>100</positionX>
+      <positionY>105</positionY>
     </ProcessLinkBend>
     <ProcessLinkBend>
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
-        <version>11</version>
+        <version>18</version>
         <linkSequence>157</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -1524,7 +1467,7 @@ function atualizaEtapaWorkflow(){&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
-        <version>11</version>
+        <version>18</version>
         <linkSequence>157</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -1535,7 +1478,7 @@ function atualizaEtapaWorkflow(){&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
-        <version>11</version>
+        <version>18</version>
         <linkSequence>157</linkSequence>
         <bendSequence>3</bendSequence>
       </processLinkBendPK>
@@ -1546,7 +1489,7 @@ function atualizaEtapaWorkflow(){&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
-        <version>11</version>
+        <version>18</version>
         <linkSequence>157</linkSequence>
         <bendSequence>4</bendSequence>
       </processLinkBendPK>
@@ -1557,7 +1500,7 @@ function atualizaEtapaWorkflow(){&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
-        <version>11</version>
+        <version>18</version>
         <linkSequence>157</linkSequence>
         <bendSequence>5</bendSequence>
       </processLinkBendPK>
@@ -1568,7 +1511,7 @@ function atualizaEtapaWorkflow(){&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
-        <version>11</version>
+        <version>18</version>
         <linkSequence>157</linkSequence>
         <bendSequence>6</bendSequence>
       </processLinkBendPK>
@@ -1579,7 +1522,7 @@ function atualizaEtapaWorkflow(){&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
-        <version>11</version>
+        <version>18</version>
         <linkSequence>162</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -1590,7 +1533,7 @@ function atualizaEtapaWorkflow(){&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
-        <version>11</version>
+        <version>18</version>
         <linkSequence>163</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -1601,7 +1544,7 @@ function atualizaEtapaWorkflow(){&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
-        <version>11</version>
+        <version>18</version>
         <linkSequence>163</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -1612,7 +1555,7 @@ function atualizaEtapaWorkflow(){&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
-        <version>11</version>
+        <version>18</version>
         <linkSequence>169</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -1626,7 +1569,7 @@ function atualizaEtapaWorkflow(){&#xd;
       <extendedPropertyFieldPK>
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
-        <version>11</version>
+        <version>18</version>
         <stateSequence>0</stateSequence>
         <propertyName>AutomaticTasks</propertyName>
       </extendedPropertyFieldPK>
@@ -1644,7 +1587,7 @@ function atualizaEtapaWorkflow(){&#xd;
       <id>0</id>
       <tenantId>0</tenantId>
       <processId>SolOutEntradas</processId>
-      <processVersion>11</processVersion>
+      <processVersion>18</processVersion>
       <stateSequence>116</stateSequence>
       <appKey>approval</appKey>
       <appField>title</appField>
@@ -1654,7 +1597,7 @@ function atualizaEtapaWorkflow(){&#xd;
       <id>0</id>
       <tenantId>0</tenantId>
       <processId>SolOutEntradas</processId>
-      <processVersion>11</processVersion>
+      <processVersion>18</processVersion>
       <stateSequence>116</stateSequence>
       <appKey>approval</appKey>
       <appField>highlight</appField>
@@ -1664,7 +1607,7 @@ function atualizaEtapaWorkflow(){&#xd;
       <id>0</id>
       <tenantId>0</tenantId>
       <processId>SolOutEntradas</processId>
-      <processVersion>11</processVersion>
+      <processVersion>18</processVersion>
       <stateSequence>116</stateSequence>
       <appKey>approval</appKey>
       <appField>approve</appField>

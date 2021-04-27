@@ -2017,7 +2017,7 @@
     <void method="add">
      <object class="com.totvs.tds.ecm.foundation.ws.GroupDto">
       <void property="groupDescription">
-       <string>Moderator group CBFARMA</string>
+       <string>Moderator group CBFarma</string>
       </void>
       <void property="groupId">
        <string>MODERATOR_camara-brasileira-de-farmarcia</string>
@@ -2027,7 +2027,7 @@
     <void method="add">
      <object class="com.totvs.tds.ecm.foundation.ws.GroupDto">
       <void property="groupDescription">
-       <string>Member group CBFARMA</string>
+       <string>Member group CBFarma</string>
       </void>
       <void property="groupId">
        <string>MEMBER_camara-brasileira-de-farmarcia</string>
@@ -2207,7 +2207,7 @@
     <void method="add">
      <object class="com.totvs.tds.ecm.foundation.ws.GroupDto">
       <void property="groupDescription">
-       <string>Moderator group CBCPAVE</string>
+       <string>Moderator group CBCPave</string>
       </void>
       <void property="groupId">
        <string>MODERATOR_cam-bras-com-pecas-acessorios-veiculos</string>
@@ -2217,7 +2217,7 @@
     <void method="add">
      <object class="com.totvs.tds.ecm.foundation.ws.GroupDto">
       <void property="groupDescription">
-       <string>Member group CBCPAVE</string>
+       <string>Member group CBCPave</string>
       </void>
       <void property="groupId">
        <string>MEMBER_cam-bras-com-pecas-acessorios-veiculos</string>
@@ -2227,7 +2227,7 @@
     <void method="add">
      <object class="com.totvs.tds.ecm.foundation.ws.GroupDto">
       <void property="groupDescription">
-       <string>Moderator group CBCGAL</string>
+       <string>Moderator group CBCGal</string>
       </void>
       <void property="groupId">
        <string>MODERATOR_cam-brasileira-com-generos-alimenticios</string>
@@ -2237,7 +2237,7 @@
     <void method="add">
      <object class="com.totvs.tds.ecm.foundation.ws.GroupDto">
       <void property="groupDescription">
-       <string>Member group CBCGAL</string>
+       <string>Member group CBCGal</string>
       </void>
       <void property="groupId">
        <string>MEMBER_cam-brasileira-com-generos-alimenticios</string>
@@ -2597,7 +2597,7 @@
     <void method="add">
      <object class="com.totvs.tds.ecm.foundation.ws.GroupDto">
       <void property="groupDescription">
-       <string>Grupo para análise fiscal - BSB</string>
+       <string>Grupos para análise fiscais em BSB</string>
       </void>
       <void property="groupId">
        <string>w_AnaFiscais_BSB</string>
@@ -2607,7 +2607,7 @@
     <void method="add">
      <object class="com.totvs.tds.ecm.foundation.ws.GroupDto">
       <void property="groupDescription">
-       <string>Grupo para análise financeira - BSB</string>
+       <string>Grupos para análise financeiras em BSB</string>
       </void>
       <void property="groupId">
        <string>w_AnaFinanceiras_BSB</string>
@@ -2617,7 +2617,7 @@
     <void method="add">
      <object class="com.totvs.tds.ecm.foundation.ws.GroupDto">
       <void property="groupDescription">
-       <string>Grupo para análise fiscal - RIO</string>
+       <string>Grupos para análise fiscais em RIO</string>
       </void>
       <void property="groupId">
        <string>w_AnaFiscais_RIO</string>
@@ -2627,7 +2627,7 @@
     <void method="add">
      <object class="com.totvs.tds.ecm.foundation.ws.GroupDto">
       <void property="groupDescription">
-       <string>Grupo para análise financeira - RIO</string>
+       <string>Grupos para análise financeiras em RIO</string>
       </void>
       <void property="groupId">
        <string>w_AnaFinanceiras_RIO</string>
@@ -2637,7 +2637,7 @@
     <void method="add">
      <object class="com.totvs.tds.ecm.foundation.ws.GroupDto">
       <void property="groupDescription">
-       <string>Grupo para Pré análise do processo Outras Entradas</string>
+       <string>Grupo Validador das Solicitações para o GERH</string>
       </void>
       <void property="groupId">
        <string>w_PreAnaliseGERH</string>
@@ -2657,6 +2657,71 @@
     </void>
     <void index="2">
      <string>Teste</string>
+    </void>
+   </array>
+  </void>
+  <void method="put">
+   <string>camposFormulario, documentoId = 10224</string>
+   <array class="java.lang.String" length="20">
+    <void index="0">
+     <string>analiseObrigatoria</string>
+    </void>
+    <void index="1">
+     <string>autorizador</string>
+    </void>
+    <void index="2">
+     <string>codcfo</string>
+    </void>
+    <void index="3">
+     <string>CodColigada</string>
+    </void>
+    <void index="4">
+     <string>codFilial</string>
+    </void>
+    <void index="5">
+     <string>codHistorico</string>
+    </void>
+    <void index="6">
+     <string>codHistoricoLongo</string>
+    </void>
+    <void index="7">
+     <string>CodPrj</string>
+    </void>
+    <void index="8">
+     <string>dataEmissao</string>
+    </void>
+    <void index="9">
+     <string>DescContrato</string>
+    </void>
+    <void index="10">
+     <string>gestorcc</string>
+    </void>
+    <void index="11">
+     <string>IdentificadorFluig</string>
+    </void>
+    <void index="12">
+     <string>IdMov</string>
+    </void>
+    <void index="13">
+     <string>n_solicitacao</string>
+    </void>
+    <void index="14">
+     <string>nivelAprov</string>
+    </void>
+    <void index="15">
+     <string>NSeqItmMov</string>
+    </void>
+    <void index="16">
+     <string>numeroMov</string>
+    </void>
+    <void index="17">
+     <string>solicitante</string>
+    </void>
+    <void index="18">
+     <string>TipoAprovacao</string>
+    </void>
+    <void index="19">
+     <string>valorliquido</string>
     </void>
    </array>
   </void>
