@@ -1,16 +1,12 @@
-USE [Corporerm_Homolog]
+USE [corporerm]
 GO
 
-/****** Object:  View [dbo].[_Fluig_GCCUSTO]    Script Date: 08/03/2021 10:58:52 ******/
+/****** Object:  View [dbo].[_Fluig_GCCUSTO]    Script Date: 03/05/2021 14:08:04 ******/
 SET ANSI_NULLS OFF
 GO
 
 SET QUOTED_IDENTIFIER OFF
 GO
-
-
-
-
 
 
 
@@ -25,7 +21,7 @@ SELECT
 ,	TMOV.IDMOV
 ,	VALORLIQUIDO
 ,	LOWER(PPESSOA.CODUSUARIO) AS RESPONSAVEL
-
+, case when GCCUSTO.CODCCUSTO in ('17.04.01.02.59712','17.04.02.03.59710') then 1 else 0 end Flg_Analise
 FROM GCCUSTO(NOLOCK) 
 		JOIN TMOV ON (GCCUSTO.CODCCUSTO=TMOV.CODCCUSTO)
 						JOIN PPESSOA ON (GCCUSTO.RESPONSAVEL=PPESSOA.CODIGO)
@@ -35,4 +31,5 @@ WHERE ATIVO='T' AND PERMITELANC='T'
 
 
 GO
+
 
