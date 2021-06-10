@@ -113,27 +113,36 @@ function atualizaEtapaWorkflow(){
         // Gravando retorno no formulário		
 		hAPI.setCardValue("gestorcc", chefe);
 		
+	
 		
-		var FlganaliseObrigatoria = datasetReturned.getValue(0, "Flg_Analise");
-		  
+	  	/////////////////////////////////////////////
+	  	//				ETAPA PRE-ANALISE		   //
+	  	/////////////////////////////////////////////
 		
-		 // Rodando novo dataset para coletar id tipo produto
-        var cmov = DatasetFactory.createConstraint("IDMOV", id_mov, id_mov, ConstraintType.MUST);
+		//Verificando item do movimento
+		var cmov = DatasetFactory.createConstraint("IDMOV", id_mov, id_mov, ConstraintType.MUST);
         var constraintsProd = new Array(cmov);
-        
-        // Executando chamada de dataset
         var datasetReturnedProd = DatasetFactory.getDataset("_RM_TITMMOV", null, constraintsProd, null);
-        
-        if ( datasetReturnedProd.getValue(0, "IDPRD") == 15296 )
-        {
-        	FlganaliseObrigatoria = 0;
-        }
-        
-        
+        var idprd = datasetReturnedProd.getValue(0, "IDPRD"); 
+        log.info("==========[ ETAPA PRE-ANALISE idprd ]========== " + idprd);
+		
+		
+		var FlganaliseObrigatoria = 0;
+		
+		//17.04.01.02.59712	Gerência Executiva de Recursos Humanos - DF
+		//17.04.02.03.59710	Gerência Executiva de Recursos Humanos - RJ
+		//09.30.0156	AUXÍLIO CRECHE/BABÁ 	15296
+		
+		if ((ccusto == '17.04.01.02.59712' || ccusto == '17.04.02.03.59710') && idprd != '15296') {
+			FlganaliseObrigatoria = 1;
+			log.info("==========[ ETAPA PRE-ANALISE if entrou ]========== ");
+		}
+		
         // Gravando retorno no formulário		
 		hAPI.setCardValue("analiseObrigatoria", FlganaliseObrigatoria);
 		
-				
+	
+		
 	  	/////////////////////////////////////////////
 	  	//		ATRIBUINDO GRUPO AUTORIZADOR 	   //
 	  	/////////////////////////////////////////////

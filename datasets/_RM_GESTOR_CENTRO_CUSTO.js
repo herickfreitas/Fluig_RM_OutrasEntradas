@@ -15,7 +15,7 @@ function createDataset(fields, constraints, sortFields) {
     }
  
         
-    var myQuery = "SELECT RESPONSAVEL FROM _Fluig_GCCUSTO WHERE CODCCUSTO ="+"'"+processo+"'" ;
+    var myQuery = "SELECT RESPONSAVEL,Flg_Analise FROM _Fluig_GCCUSTO WHERE CODCCUSTO ="+"'"+processo+"'" ;
     log.info("QUERY: " + myQuery);
     try {
         var conn = ds.getConnection();

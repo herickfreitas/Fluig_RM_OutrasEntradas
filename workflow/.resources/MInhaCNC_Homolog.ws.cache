@@ -14316,6 +14316,71 @@
    </array>
   </void>
   <void method="put">
+   <string>camposFormulario, documentoId = 10224</string>
+   <array class="java.lang.String" length="20">
+    <void index="0">
+     <string>analiseObrigatoria</string>
+    </void>
+    <void index="1">
+     <string>autorizador</string>
+    </void>
+    <void index="2">
+     <string>codcfo</string>
+    </void>
+    <void index="3">
+     <string>CodColigada</string>
+    </void>
+    <void index="4">
+     <string>codFilial</string>
+    </void>
+    <void index="5">
+     <string>codHistorico</string>
+    </void>
+    <void index="6">
+     <string>codHistoricoLongo</string>
+    </void>
+    <void index="7">
+     <string>CodPrj</string>
+    </void>
+    <void index="8">
+     <string>dataEmissao</string>
+    </void>
+    <void index="9">
+     <string>DescContrato</string>
+    </void>
+    <void index="10">
+     <string>gestorcc</string>
+    </void>
+    <void index="11">
+     <string>IdentificadorFluig</string>
+    </void>
+    <void index="12">
+     <string>IdMov</string>
+    </void>
+    <void index="13">
+     <string>n_solicitacao</string>
+    </void>
+    <void index="14">
+     <string>nivelAprov</string>
+    </void>
+    <void index="15">
+     <string>NSeqItmMov</string>
+    </void>
+    <void index="16">
+     <string>numeroMov</string>
+    </void>
+    <void index="17">
+     <string>solicitante</string>
+    </void>
+    <void index="18">
+     <string>TipoAprovacao</string>
+    </void>
+    <void index="19">
+     <string>valorliquido</string>
+    </void>
+   </array>
+  </void>
+  <void method="put">
    <string>mecanismo</string>
    <array class="[Ljava.lang.Object;" length="9">
     <void index="0">
