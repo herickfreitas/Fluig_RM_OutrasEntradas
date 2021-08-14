@@ -119,13 +119,12 @@ function atualizaEtapaWorkflow(){
 	  	//				ETAPA PRE-ANALISE		   //
 	  	/////////////////////////////////////////////
 		
-		//Verificando item do movimento
-		var cmov = DatasetFactory.createConstraint("IDMOV", id_mov, id_mov, ConstraintType.MUST);
-        var constraintsProd = new Array(cmov);
-        var datasetReturnedProd = DatasetFactory.getDataset("_RM_TITMMOV", null, constraintsProd, null);
-        var idprd = datasetReturnedProd.getValue(0, "IDPRD"); 
-        log.info("==========[ ETAPA PRE-ANALISE idprd ]========== " + idprd);
+		log.info("==========[ ETAPA PRE-ANALISE INICIO IDMOV: "+id_mov+" CCUSTO: "+ccusto+" ]========== ");
 		
+        // 1º Retirando o elemento 2º Retirando o conteúdo
+        var returnXML = xmlResponse.getElementsByTagName("IDPRD");
+        var idprd = returnXML.item(0).getTextContent();
+        log.info("==========[ ETAPA PRE-ANALISE idprd ]========== " + idprd);
 		
 		var FlganaliseObrigatoria = 0;
 		
@@ -135,7 +134,7 @@ function atualizaEtapaWorkflow(){
 		
 		if ((ccusto == '17.04.01.02.59712' || ccusto == '17.04.02.03.59710') && idprd != '15296') {
 			FlganaliseObrigatoria = 1;
-			log.info("==========[ ETAPA PRE-ANALISE if entrou ]========== ");
+			log.info("==========[ IDMOV: "+id_mov+" - ETAPA PRE-ANALISE FlganaliseObrigatoria ]========== "+FlganaliseObrigatoria);
 		}
 		
         // Gravando retorno no formulário		
@@ -172,11 +171,11 @@ function atualizaEtapaWorkflow(){
         var VALORLIQUIDO = nodes.item(0).getTextContent();
 		
 
-    	if (parseFloat(VALORLIQUIDO) > parseFloat('115070.6000'))
-       	 	var faixa = '2';
-    
-    	if (parseFloat(VALORLIQUIDO) <= parseFloat('115070.6000'))
-       	 	var faixa = '1';
+	  	if (parseFloat(VALORLIQUIDO) > parseFloat('152042.0000')) //if (parseFloat(VALORLIQUIDO) > parseFloat('115070.6000'))
+     	 	var faixa = '2';
+	  	else  	
+     	 	var faixa = '1';
+
     
     	// Gravando retorno no formulário		
 		hAPI.setCardValue("nivelAprov", faixa);

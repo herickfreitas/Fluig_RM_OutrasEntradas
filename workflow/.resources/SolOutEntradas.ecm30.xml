@@ -29,7 +29,7 @@
     <processDefinitionVersionPK>
       <companyId>1</companyId>
       <processId>Solicitações de Outras Entradas</processId>
-      <version>16</version>
+      <version>21</version>
     </processDefinitionVersionPK>
     <versionDescription></versionDescription>
     <formId>0</formId>
@@ -612,7 +612,7 @@
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
         <expressionOrder>1</expressionOrder>
-        <version>16</version>
+        <version>21</version>
         <sequence>147</sequence>
       </conditionProcessStatePK>
       <condition>false</condition>
@@ -624,7 +624,7 @@
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
         <expressionOrder>2</expressionOrder>
-        <version>16</version>
+        <version>21</version>
         <sequence>147</sequence>
       </conditionProcessStatePK>
       <condition>false</condition>
@@ -636,7 +636,7 @@
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
         <expressionOrder>1</expressionOrder>
-        <version>16</version>
+        <version>21</version>
         <sequence>164</sequence>
       </conditionProcessStatePK>
       <condition>false</condition>
@@ -648,7 +648,7 @@
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
         <expressionOrder>2</expressionOrder>
-        <version>16</version>
+        <version>21</version>
         <sequence>164</sequence>
       </conditionProcessStatePK>
       <condition>false</condition>
@@ -1137,13 +1137,12 @@ function atualizaEtapaWorkflow(){&#xd;
 	  	//				ETAPA PRE-ANALISE		   //&#xd;
 	  	/////////////////////////////////////////////&#xd;
 		&#xd;
-		//Verificando item do movimento&#xd;
-		var cmov = DatasetFactory.createConstraint(&quot;IDMOV&quot;, id_mov, id_mov, ConstraintType.MUST);&#xd;
-        var constraintsProd = new Array(cmov);&#xd;
-        var datasetReturnedProd = DatasetFactory.getDataset(&quot;_RM_TITMMOV&quot;, null, constraintsProd, null);&#xd;
-        var idprd = datasetReturnedProd.getValue(0, &quot;IDPRD&quot;); &#xd;
-        log.info(&quot;==========[ ETAPA PRE-ANALISE idprd ]========== &quot; + idprd);&#xd;
+		log.info(&quot;==========[ ETAPA PRE-ANALISE INICIO IDMOV: &quot;+id_mov+&quot; CCUSTO: &quot;+ccusto+&quot; ]========== &quot;);&#xd;
 		&#xd;
+        // 1º Retirando o elemento 2º Retirando o conteúdo&#xd;
+        var returnXML = xmlResponse.getElementsByTagName(&quot;IDPRD&quot;);&#xd;
+        var idprd = returnXML.item(0).getTextContent();&#xd;
+        log.info(&quot;==========[ ETAPA PRE-ANALISE idprd ]========== &quot; + idprd);&#xd;
 		&#xd;
 		var FlganaliseObrigatoria = 0;&#xd;
 		&#xd;
@@ -1153,7 +1152,7 @@ function atualizaEtapaWorkflow(){&#xd;
 		&#xd;
 		if ((ccusto == &apos;17.04.01.02.59712&apos; || ccusto == &apos;17.04.02.03.59710&apos;) &amp;&amp; idprd != &apos;15296&apos;) {&#xd;
 			FlganaliseObrigatoria = 1;&#xd;
-			log.info(&quot;==========[ ETAPA PRE-ANALISE if entrou ]========== &quot;);&#xd;
+			log.info(&quot;==========[ IDMOV: &quot;+id_mov+&quot; - ETAPA PRE-ANALISE FlganaliseObrigatoria ]========== &quot;+FlganaliseObrigatoria);&#xd;
 		}&#xd;
 		&#xd;
         // Gravando retorno no formulário		&#xd;
@@ -1190,11 +1189,11 @@ function atualizaEtapaWorkflow(){&#xd;
         var VALORLIQUIDO = nodes.item(0).getTextContent();&#xd;
 		&#xd;
 &#xd;
-    	if (parseFloat(VALORLIQUIDO) &gt; parseFloat(&apos;115070.6000&apos;))&#xd;
-       	 	var faixa = &apos;2&apos;;&#xd;
-    &#xd;
-    	if (parseFloat(VALORLIQUIDO) &lt;= parseFloat(&apos;115070.6000&apos;))&#xd;
-       	 	var faixa = &apos;1&apos;;&#xd;
+	  	if (parseFloat(VALORLIQUIDO) &gt; parseFloat(&apos;152042.0000&apos;)) //if (parseFloat(VALORLIQUIDO) &gt; parseFloat(&apos;115070.6000&apos;))&#xd;
+     	 	var faixa = &apos;2&apos;;&#xd;
+	  	else  	&#xd;
+     	 	var faixa = &apos;1&apos;;&#xd;
+&#xd;
     &#xd;
     	// Gravando retorno no formulário		&#xd;
 		hAPI.setCardValue(&quot;nivelAprov&quot;, faixa);&#xd;
@@ -1215,7 +1214,7 @@ function atualizaEtapaWorkflow(){&#xd;
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
         <propertyId>AutomaticTasks</propertyId>
-        <version>16</version>
+        <version>21</version>
       </advancedProcessPropertiesPK>
       <propertieValue></propertieValue>
     </AdvancedProcessProperties>
@@ -1223,11 +1222,11 @@ function atualizaEtapaWorkflow(){&#xd;
   <list>
     <SwimLane>
       <color>FFFFFF</color>
-      <height>395</height>
+      <height>232</height>
       <width>959</width>
       <positionX>2</positionX>
-      <positionY>367</positionY>
-      <stateName>Autorizadores</stateName>
+      <positionY>135</positionY>
+      <stateName>Gestor Centro de Custo</stateName>
       <type>2</type>
       <parentSequence>0</parentSequence>
       <swimLanePK>
@@ -1239,11 +1238,11 @@ function atualizaEtapaWorkflow(){&#xd;
     </SwimLane>
     <SwimLane>
       <color>FFFFFF</color>
-      <height>232</height>
+      <height>136</height>
       <width>959</width>
       <positionX>2</positionX>
-      <positionY>135</positionY>
-      <stateName>Gestor Centro de Custo</stateName>
+      <positionY>0</positionY>
+      <stateName>Solicitação</stateName>
       <type>2</type>
       <parentSequence>0</parentSequence>
       <swimLanePK>
@@ -1287,11 +1286,11 @@ function atualizaEtapaWorkflow(){&#xd;
     </SwimLane>
     <SwimLane>
       <color>FFFFFF</color>
-      <height>136</height>
+      <height>395</height>
       <width>959</width>
       <positionX>2</positionX>
-      <positionY>0</positionY>
-      <stateName>Solicitação</stateName>
+      <positionY>367</positionY>
+      <stateName>Autorizadores</stateName>
       <type>2</type>
       <parentSequence>0</parentSequence>
       <swimLanePK>
@@ -1377,7 +1376,7 @@ function atualizaEtapaWorkflow(){&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
-        <version>16</version>
+        <version>21</version>
         <linkSequence>126</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -1388,7 +1387,7 @@ function atualizaEtapaWorkflow(){&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
-        <version>16</version>
+        <version>21</version>
         <linkSequence>126</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -1399,7 +1398,7 @@ function atualizaEtapaWorkflow(){&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
-        <version>16</version>
+        <version>21</version>
         <linkSequence>142</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -1410,7 +1409,7 @@ function atualizaEtapaWorkflow(){&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
-        <version>16</version>
+        <version>21</version>
         <linkSequence>154</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -1421,7 +1420,7 @@ function atualizaEtapaWorkflow(){&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
-        <version>16</version>
+        <version>21</version>
         <linkSequence>154</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -1432,7 +1431,7 @@ function atualizaEtapaWorkflow(){&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
-        <version>16</version>
+        <version>21</version>
         <linkSequence>154</linkSequence>
         <bendSequence>3</bendSequence>
       </processLinkBendPK>
@@ -1443,7 +1442,7 @@ function atualizaEtapaWorkflow(){&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
-        <version>16</version>
+        <version>21</version>
         <linkSequence>154</linkSequence>
         <bendSequence>4</bendSequence>
       </processLinkBendPK>
@@ -1454,7 +1453,7 @@ function atualizaEtapaWorkflow(){&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
-        <version>16</version>
+        <version>21</version>
         <linkSequence>156</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -1465,7 +1464,7 @@ function atualizaEtapaWorkflow(){&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
-        <version>16</version>
+        <version>21</version>
         <linkSequence>157</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -1476,7 +1475,7 @@ function atualizaEtapaWorkflow(){&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
-        <version>16</version>
+        <version>21</version>
         <linkSequence>157</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -1487,7 +1486,7 @@ function atualizaEtapaWorkflow(){&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
-        <version>16</version>
+        <version>21</version>
         <linkSequence>157</linkSequence>
         <bendSequence>3</bendSequence>
       </processLinkBendPK>
@@ -1498,7 +1497,7 @@ function atualizaEtapaWorkflow(){&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
-        <version>16</version>
+        <version>21</version>
         <linkSequence>157</linkSequence>
         <bendSequence>4</bendSequence>
       </processLinkBendPK>
@@ -1509,7 +1508,7 @@ function atualizaEtapaWorkflow(){&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
-        <version>16</version>
+        <version>21</version>
         <linkSequence>157</linkSequence>
         <bendSequence>5</bendSequence>
       </processLinkBendPK>
@@ -1520,7 +1519,7 @@ function atualizaEtapaWorkflow(){&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
-        <version>16</version>
+        <version>21</version>
         <linkSequence>157</linkSequence>
         <bendSequence>6</bendSequence>
       </processLinkBendPK>
@@ -1531,7 +1530,7 @@ function atualizaEtapaWorkflow(){&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
-        <version>16</version>
+        <version>21</version>
         <linkSequence>162</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -1542,7 +1541,7 @@ function atualizaEtapaWorkflow(){&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
-        <version>16</version>
+        <version>21</version>
         <linkSequence>163</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -1553,7 +1552,7 @@ function atualizaEtapaWorkflow(){&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
-        <version>16</version>
+        <version>21</version>
         <linkSequence>163</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -1564,7 +1563,7 @@ function atualizaEtapaWorkflow(){&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
-        <version>16</version>
+        <version>21</version>
         <linkSequence>169</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -1578,7 +1577,7 @@ function atualizaEtapaWorkflow(){&#xd;
       <extendedPropertyFieldPK>
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
-        <version>16</version>
+        <version>21</version>
         <stateSequence>0</stateSequence>
         <propertyName>AutomaticTasks</propertyName>
       </extendedPropertyFieldPK>
@@ -1596,7 +1595,7 @@ function atualizaEtapaWorkflow(){&#xd;
       <id>0</id>
       <tenantId>0</tenantId>
       <processId>SolOutEntradas</processId>
-      <processVersion>16</processVersion>
+      <processVersion>21</processVersion>
       <stateSequence>116</stateSequence>
       <appKey>approval</appKey>
       <appField>title</appField>
@@ -1606,7 +1605,7 @@ function atualizaEtapaWorkflow(){&#xd;
       <id>0</id>
       <tenantId>0</tenantId>
       <processId>SolOutEntradas</processId>
-      <processVersion>16</processVersion>
+      <processVersion>21</processVersion>
       <stateSequence>116</stateSequence>
       <appKey>approval</appKey>
       <appField>highlight</appField>
@@ -1616,7 +1615,7 @@ function atualizaEtapaWorkflow(){&#xd;
       <id>0</id>
       <tenantId>0</tenantId>
       <processId>SolOutEntradas</processId>
-      <processVersion>16</processVersion>
+      <processVersion>21</processVersion>
       <stateSequence>116</stateSequence>
       <appKey>approval</appKey>
       <appField>approve</appField>
