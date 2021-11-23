@@ -142,6 +142,23 @@ function atualizaEtapaWorkflow(){
 		
 	
 		
+
+	  	/////////////////////////////////////////////////////////////////
+	  	//		ATRIBUINDO FAIXA DE VALORES PARA APROVAÇÃO		 	   //
+	  	/////////////////////////////////////////////////////////////////
+		// Atenção - Quando o valor for superior ao limite definido será direcionado para VPF, então a variavel ccusto receberá o valor da VPF
+		
+        // 1º Retirando o elemento 2º Retirando o conteúdo
+        var nodes = xmlResponse.getElementsByTagName("VALORLIQUIDO");
+        var VALORLIQUIDO = nodes.item(0).getTextContent();
+        
+        
+	  	if (parseFloat(VALORLIQUIDO) > parseFloat('152042.0000')) {
+	  		ccusto = '18.01.02.01.58001' ; // 18.01.02.01.58001 - Gabinete da Vice-Presidência Financeira - RJ
+	  		log.info("==========[ VALORLIQUIDO > 152042.0000 -> ccusto =  ]========== " + ccusto);
+	  	} 
+	  		
+		
 	  	/////////////////////////////////////////////
 	  	//		ATRIBUINDO GRUPO AUTORIZADOR 	   //
 	  	/////////////////////////////////////////////
@@ -162,24 +179,6 @@ function atualizaEtapaWorkflow(){
 		hAPI.setCardValue("autorizador", autorizador);
 		
 		
-	  	/////////////////////////////////////////////////////////////////
-	  	//		ATRIBUINDO FAIXA DE VALORES PARA APROVAÇÃO		 	   //
-	  	/////////////////////////////////////////////////////////////////
-		
-        // 1º Retirando o elemento 2º Retirando o conteúdo
-        var nodes = xmlResponse.getElementsByTagName("VALORLIQUIDO");
-        var VALORLIQUIDO = nodes.item(0).getTextContent();
-		
-
-	  	if (parseFloat(VALORLIQUIDO) > parseFloat('152042.0000')) //if (parseFloat(VALORLIQUIDO) > parseFloat('115070.6000'))
-     	 	var faixa = '2';
-	  	else  	
-     	 	var faixa = '1';
-
-    
-    	// Gravando retorno no formulário		
-		hAPI.setCardValue("nivelAprov", faixa);
-
 		}
 	
 	catch (e)

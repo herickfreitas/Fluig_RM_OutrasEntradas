@@ -29,7 +29,7 @@
     <processDefinitionVersionPK>
       <companyId>1</companyId>
       <processId>Solicitações de Outras Entradas</processId>
-      <version>21</version>
+      <version>22</version>
     </processDefinitionVersionPK>
     <versionDescription></versionDescription>
     <formId>0</formId>
@@ -107,7 +107,7 @@
       <stateName>Solicitante - Anexar documentos</stateName>
       <stateDescription>Solicitante - Anexar documentos</stateDescription>
       <instruction></instruction>
-      <deadlineTime>7200</deadlineTime>
+      <deadlineTime>3600</deadlineTime>
       <deadlineFieldName></deadlineFieldName>
       <joint>false</joint>
       <agreementPercentage>0</agreementPercentage>
@@ -179,60 +179,8 @@
       <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
       <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
       <automatic>false</automatic>
-      <positionX>410</positionX>
-      <positionY>440</positionY>
-      <forecastedEffortType>0</forecastedEffortType>
-      <forecastedEffort>0</forecastedEffort>
-      <notifyManagerFollowUp>false</notifyManagerFollowUp>
-      <notifyManagerDelay>false</notifyManagerDelay>
-      <allowanceManagerTime>0</allowanceManagerTime>
-      <frequenceManagerTime>0</frequenceManagerTime>
-      <inhibitTransfer>true</inhibitTransfer>
-      <periodId>Expediente_CNC_10as19</periodId>
-      <stateType>0</stateType>
-      <bpmnType>80</bpmnType>
-      <signalId>0</signalId>
-      <counterSign>false</counterSign>
-      <openInstances>0</openInstances>
-      <noticeExpirationAuthorityTime>0</noticeExpirationAuthorityTime>
-      <noticeExpirationRequisitionerTime>0</noticeExpirationRequisitionerTime>
-      <noticeExpirationManagerTime>0</noticeExpirationManagerTime>
-      <destinationStates/>
-      <digitalSignature>false</digitalSignature>
-      <executionType>0</executionType>
-    </ProcessState>
-    <ProcessState>
-      <processStatePK>
-        <companyId>1</companyId>
-        <processId>SolOutEntradas</processId>
-        <version>1</version>
-        <sequence>135</sequence>
-      </processStatePK>
-      <stateName>Presidência - Aprovar solicitação</stateName>
-      <stateDescription>Presidência - Aprovar solicitação</stateDescription>
-      <instruction></instruction>
-      <deadlineTime>0</deadlineTime>
-      <deadlineFieldName></deadlineFieldName>
-      <joint>false</joint>
-      <agreementPercentage>0</agreementPercentage>
-      <engineAllocationId>Usuário</engineAllocationId>
-      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;User&gt;robertotadros&lt;/User&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
-      <selectColleague>1</selectColleague>
-      <initialState>false</initialState>
-      <notifyAuthorityDelay>true</notifyAuthorityDelay>
-      <notifyRequisitionerDelay>false</notifyRequisitionerDelay>
-      <allowanceAuthorityTime>3600</allowanceAuthorityTime>
-      <frequenceAuthorityTime>3600</frequenceAuthorityTime>
-      <allowanceRequisitionerTime>0</allowanceRequisitionerTime>
-      <frequenceRequisitionerTime>0</frequenceRequisitionerTime>
-      <transferAttachments>false</transferAttachments>
-      <subProcessId></subProcessId>
-      <formFolder>0</formFolder>
-      <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
-      <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
-      <automatic>false</automatic>
-      <positionX>600</positionX>
-      <positionY>600</positionY>
+      <positionX>720</positionX>
+      <positionY>170</positionY>
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
       <notifyManagerFollowUp>false</notifyManagerFollowUp>
@@ -283,8 +231,8 @@
       <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
       <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
       <automatic>false</automatic>
-      <positionX>120</positionX>
-      <positionY>570</positionY>
+      <positionX>720</positionX>
+      <positionY>340</positionY>
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
       <notifyManagerFollowUp>false</notifyManagerFollowUp>
@@ -362,62 +310,10 @@
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
         <version>1</version>
-        <sequence>149</sequence>
-      </processStatePK>
-      <stateName>VPF - Aprovar Solicitação</stateName>
-      <stateDescription>VPF - Aprovar Solicitação</stateDescription>
-      <instruction></instruction>
-      <deadlineTime>0</deadlineTime>
-      <deadlineFieldName></deadlineFieldName>
-      <joint>false</joint>
-      <agreementPercentage>0</agreementPercentage>
-      <engineAllocationId>Usuário</engineAllocationId>
-      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;User&gt;leandropinto&lt;/User&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
-      <selectColleague>1</selectColleague>
-      <initialState>false</initialState>
-      <notifyAuthorityDelay>true</notifyAuthorityDelay>
-      <notifyRequisitionerDelay>false</notifyRequisitionerDelay>
-      <allowanceAuthorityTime>3600</allowanceAuthorityTime>
-      <frequenceAuthorityTime>3600</frequenceAuthorityTime>
-      <allowanceRequisitionerTime>0</allowanceRequisitionerTime>
-      <frequenceRequisitionerTime>0</frequenceRequisitionerTime>
-      <transferAttachments>false</transferAttachments>
-      <subProcessId></subProcessId>
-      <formFolder>0</formFolder>
-      <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
-      <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
-      <automatic>false</automatic>
-      <positionX>600</positionX>
-      <positionY>441</positionY>
-      <forecastedEffortType>0</forecastedEffortType>
-      <forecastedEffort>0</forecastedEffort>
-      <notifyManagerFollowUp>false</notifyManagerFollowUp>
-      <notifyManagerDelay>false</notifyManagerDelay>
-      <allowanceManagerTime>0</allowanceManagerTime>
-      <frequenceManagerTime>0</frequenceManagerTime>
-      <inhibitTransfer>false</inhibitTransfer>
-      <periodId>Expediente_CNC_10as19</periodId>
-      <stateType>0</stateType>
-      <bpmnType>80</bpmnType>
-      <signalId>0</signalId>
-      <counterSign>false</counterSign>
-      <openInstances>0</openInstances>
-      <noticeExpirationAuthorityTime>0</noticeExpirationAuthorityTime>
-      <noticeExpirationRequisitionerTime>0</noticeExpirationRequisitionerTime>
-      <noticeExpirationManagerTime>0</noticeExpirationManagerTime>
-      <destinationStates/>
-      <digitalSignature>false</digitalSignature>
-      <executionType>0</executionType>
-    </ProcessState>
-    <ProcessState>
-      <processStatePK>
-        <companyId>1</companyId>
-        <processId>SolOutEntradas</processId>
-        <version>1</version>
         <sequence>166</sequence>
       </processStatePK>
-      <stateName>Realizar Pré Análise</stateName>
-      <stateDescription>Realizar Pré Análise</stateDescription>
+      <stateName>GERH - Realizar Pré Análise</stateName>
+      <stateDescription>GERH - Realizar Pré Análise</stateDescription>
       <instruction></instruction>
       <deadlineTime>0</deadlineTime>
       <deadlineFieldName></deadlineFieldName>
@@ -439,7 +335,7 @@
       <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
       <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
       <automatic>false</automatic>
-      <positionX>210</positionX>
+      <positionX>240</positionX>
       <positionY>270</positionY>
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
@@ -466,31 +362,6 @@
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
         <version>1</version>
-        <sequence>147</sequence>
-      </processStatePK>
-      <stateName>Aprovar - Segundo nível aprovação</stateName>
-      <stateDescription>Aprovar - Segundo nível aprovação</stateDescription>
-      <joint>false</joint>
-      <initialState>false</initialState>
-      <transferAttachments>false</transferAttachments>
-      <subProcessId></subProcessId>
-      <formFolder>0</formFolder>
-      <automatic>true</automatic>
-      <positionX>590</positionX>
-      <positionY>220</positionY>
-      <inhibitTransfer>false</inhibitTransfer>
-      <stateType>1</stateType>
-      <bpmnType>120</bpmnType>
-      <signalId>0</signalId>
-      <openInstances>0</openInstances>
-      <destinationStates/>
-      <digitalSignature>false</digitalSignature>
-    </ProcessState>
-    <ProcessState>
-      <processStatePK>
-        <companyId>1</companyId>
-        <processId>SolOutEntradas</processId>
-        <version>1</version>
         <sequence>164</sequence>
       </processStatePK>
       <stateName>Encaminhamento</stateName>
@@ -502,7 +373,7 @@
       <formFolder>0</formFolder>
       <automatic>true</automatic>
       <positionX>80</positionX>
-      <positionY>170</positionY>
+      <positionY>160</positionY>
       <inhibitTransfer>false</inhibitTransfer>
       <stateType>1</stateType>
       <bpmnType>120</bpmnType>
@@ -540,8 +411,8 @@
       <notifyAuthorityFollowUp>false</notifyAuthorityFollowUp>
       <notifyRequisitionerFollowUp>true</notifyRequisitionerFollowUp>
       <automatic>false</automatic>
-      <positionX>180</positionX>
-      <positionY>830</positionY>
+      <positionX>200</positionX>
+      <positionY>507</positionY>
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
       <notifyManagerFollowUp>false</notifyManagerFollowUp>
@@ -587,8 +458,8 @@
       <notifyAuthorityFollowUp>false</notifyAuthorityFollowUp>
       <notifyRequisitionerFollowUp>true</notifyRequisitionerFollowUp>
       <automatic>false</automatic>
-      <positionX>560</positionX>
-      <positionY>800</positionY>
+      <positionX>690</positionX>
+      <positionY>507</positionY>
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
       <notifyManagerFollowUp>false</notifyManagerFollowUp>
@@ -612,22 +483,10 @@
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
         <expressionOrder>1</expressionOrder>
-        <version>21</version>
-        <sequence>147</sequence>
+        <version>22</version>
+        <sequence>164</sequence>
       </conditionProcessStatePK>
-      <condition>false</condition>
-      <destinationSequenceId>149</destinationSequenceId>
-      <conditionType>1</conditionType>
-    </ConditionProcessState>
-    <ConditionProcessState>
-      <conditionProcessStatePK>
-        <companyId>1</companyId>
-        <processId>SolOutEntradas</processId>
-        <expressionOrder>2</expressionOrder>
-        <version>21</version>
-        <sequence>147</sequence>
-      </conditionProcessStatePK>
-      <condition>false</condition>
+      <condition></condition>
       <destinationSequenceId>123</destinationSequenceId>
       <conditionType>1</conditionType>
     </ConditionProcessState>
@@ -635,8 +494,8 @@
       <conditionProcessStatePK>
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
-        <expressionOrder>1</expressionOrder>
-        <version>21</version>
+        <expressionOrder>2</expressionOrder>
+        <version>22</version>
         <sequence>164</sequence>
       </conditionProcessStatePK>
       <condition>false</condition>
@@ -647,8 +506,8 @@
       <conditionProcessStatePK>
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
-        <expressionOrder>2</expressionOrder>
-        <version>21</version>
+        <expressionOrder>3</expressionOrder>
+        <version>22</version>
         <sequence>164</sequence>
       </conditionProcessStatePK>
       <condition>false</condition>
@@ -696,57 +555,6 @@
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
         <version>1</version>
-        <linkSequence>137</linkSequence>
-      </processLinkPK>
-      <actionLabel></actionLabel>
-      <returnPermited>false</returnPermited>
-      <initialStateSequence>135</initialStateSequence>
-      <finalStateSequence>8</finalStateSequence>
-      <returnLabel></returnLabel>
-      <name></name>
-      <automaticLink>false</automaticLink>
-      <defaultLink>true</defaultLink>
-      <type>0</type>
-    </ProcessLink>
-    <ProcessLink>
-      <processLinkPK>
-        <companyId>1</companyId>
-        <processId>SolOutEntradas</processId>
-        <version>1</version>
-        <linkSequence>138</linkSequence>
-      </processLinkPK>
-      <actionLabel>Cancelar Solicitação</actionLabel>
-      <returnPermited>false</returnPermited>
-      <initialStateSequence>135</initialStateSequence>
-      <finalStateSequence>134</finalStateSequence>
-      <returnLabel></returnLabel>
-      <name>Cancelar Solicitação</name>
-      <automaticLink>false</automaticLink>
-      <defaultLink>false</defaultLink>
-      <type>0</type>
-    </ProcessLink>
-    <ProcessLink>
-      <processLinkPK>
-        <companyId>1</companyId>
-        <processId>SolOutEntradas</processId>
-        <version>1</version>
-        <linkSequence>142</linkSequence>
-      </processLinkPK>
-      <actionLabel></actionLabel>
-      <returnPermited>false</returnPermited>
-      <initialStateSequence>140</initialStateSequence>
-      <finalStateSequence>134</finalStateSequence>
-      <returnLabel></returnLabel>
-      <name>Cancelar Solicitação</name>
-      <automaticLink>false</automaticLink>
-      <defaultLink>false</defaultLink>
-      <type>0</type>
-    </ProcessLink>
-    <ProcessLink>
-      <processLinkPK>
-        <companyId>1</companyId>
-        <processId>SolOutEntradas</processId>
-        <version>1</version>
         <linkSequence>143</linkSequence>
       </processLinkPK>
       <actionLabel></actionLabel>
@@ -758,77 +566,6 @@
       <automaticLink>false</automaticLink>
       <defaultLink>true</defaultLink>
       <type>0</type>
-    </ProcessLink>
-    <ProcessLink>
-      <processLinkPK>
-        <companyId>1</companyId>
-        <processId>SolOutEntradas</processId>
-        <version>1</version>
-        <linkSequence>148</linkSequence>
-      </processLinkPK>
-      <actionLabel></actionLabel>
-      <returnPermited>false</returnPermited>
-      <initialStateSequence>145</initialStateSequence>
-      <finalStateSequence>147</finalStateSequence>
-      <returnLabel></returnLabel>
-      <name></name>
-      <automaticLink>false</automaticLink>
-      <defaultLink>true</defaultLink>
-      <type>0</type>
-    </ProcessLink>
-    <ProcessLink>
-      <processLinkPK>
-        <companyId>1</companyId>
-        <processId>SolOutEntradas</processId>
-        <version>1</version>
-        <linkSequence>150</linkSequence>
-      </processLinkPK>
-      <actionLabel></actionLabel>
-      <returnPermited>false</returnPermited>
-      <initialStateSequence>147</initialStateSequence>
-      <finalStateSequence>149</finalStateSequence>
-      <returnLabel></returnLabel>
-      <name></name>
-      <automaticLink>false</automaticLink>
-      <defaultLink>false</defaultLink>
-      <type>0</type>
-    </ProcessLink>
-    <ProcessLink>
-      <processLinkPK>
-        <companyId>1</companyId>
-        <processId>SolOutEntradas</processId>
-        <version>1</version>
-        <linkSequence>153</linkSequence>
-      </processLinkPK>
-      <actionLabel></actionLabel>
-      <returnPermited>false</returnPermited>
-      <initialStateSequence>147</initialStateSequence>
-      <finalStateSequence>123</finalStateSequence>
-      <returnLabel></returnLabel>
-      <name></name>
-      <automaticLink>false</automaticLink>
-      <defaultLink>false</defaultLink>
-      <type>0</type>
-    </ProcessLink>
-    <ProcessLink>
-      <processLinkPK>
-        <companyId>1</companyId>
-        <processId>SolOutEntradas</processId>
-        <version>1</version>
-        <linkSequence>154</linkSequence>
-      </processLinkPK>
-      <actionLabel></actionLabel>
-      <returnPermited>false</returnPermited>
-      <initialStateSequence>149</initialStateSequence>
-      <finalStateSequence>8</finalStateSequence>
-      <returnLabel></returnLabel>
-      <name></name>
-      <automaticLink>false</automaticLink>
-      <defaultLink>true</defaultLink>
-      <type>0</type>
-      <movementTitle></movementTitle>
-      <movementDescription></movementDescription>
-      <movementAccessLinkDescription></movementAccessLinkDescription>
     </ProcessLink>
     <ProcessLink>
       <processLinkPK>
@@ -852,65 +589,11 @@
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
         <version>1</version>
-        <linkSequence>156</linkSequence>
-      </processLinkPK>
-      <actionLabel></actionLabel>
-      <returnPermited>false</returnPermited>
-      <initialStateSequence>116</initialStateSequence>
-      <finalStateSequence>145</finalStateSequence>
-      <returnLabel></returnLabel>
-      <name></name>
-      <automaticLink>true</automaticLink>
-      <defaultLink>false</defaultLink>
-      <type>0</type>
-      <movementTitle></movementTitle>
-      <movementDescription></movementDescription>
-      <movementAccessLinkDescription></movementAccessLinkDescription>
-    </ProcessLink>
-    <ProcessLink>
-      <processLinkPK>
-        <companyId>1</companyId>
-        <processId>SolOutEntradas</processId>
-        <version>1</version>
-        <linkSequence>157</linkSequence>
-      </processLinkPK>
-      <actionLabel></actionLabel>
-      <returnPermited>false</returnPermited>
-      <initialStateSequence>145</initialStateSequence>
-      <finalStateSequence>134</finalStateSequence>
-      <returnLabel></returnLabel>
-      <name></name>
-      <automaticLink>false</automaticLink>
-      <defaultLink>false</defaultLink>
-      <type>0</type>
-    </ProcessLink>
-    <ProcessLink>
-      <processLinkPK>
-        <companyId>1</companyId>
-        <processId>SolOutEntradas</processId>
-        <version>1</version>
         <linkSequence>162</linkSequence>
       </processLinkPK>
       <actionLabel></actionLabel>
       <returnPermited>false</returnPermited>
       <initialStateSequence>123</initialStateSequence>
-      <finalStateSequence>134</finalStateSequence>
-      <returnLabel></returnLabel>
-      <name></name>
-      <automaticLink>false</automaticLink>
-      <defaultLink>false</defaultLink>
-      <type>0</type>
-    </ProcessLink>
-    <ProcessLink>
-      <processLinkPK>
-        <companyId>1</companyId>
-        <processId>SolOutEntradas</processId>
-        <version>1</version>
-        <linkSequence>163</linkSequence>
-      </processLinkPK>
-      <actionLabel></actionLabel>
-      <returnPermited>false</returnPermited>
-      <initialStateSequence>149</initialStateSequence>
       <finalStateSequence>134</finalStateSequence>
       <returnLabel></returnLabel>
       <name></name>
@@ -998,8 +681,59 @@
       </processLinkPK>
       <actionLabel></actionLabel>
       <returnPermited>false</returnPermited>
-      <initialStateSequence>149</initialStateSequence>
-      <finalStateSequence>135</finalStateSequence>
+      <initialStateSequence>164</initialStateSequence>
+      <finalStateSequence>123</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>SolOutEntradas</processId>
+        <version>1</version>
+        <linkSequence>171</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>145</initialStateSequence>
+      <finalStateSequence>123</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>SolOutEntradas</processId>
+        <version>1</version>
+        <linkSequence>172</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>145</initialStateSequence>
+      <finalStateSequence>134</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>SolOutEntradas</processId>
+        <version>1</version>
+        <linkSequence>173</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>140</initialStateSequence>
+      <finalStateSequence>134</finalStateSequence>
       <returnLabel></returnLabel>
       <name></name>
       <automaticLink>false</automaticLink>
@@ -1160,6 +894,23 @@ function atualizaEtapaWorkflow(){&#xd;
 		&#xd;
 	&#xd;
 		&#xd;
+&#xd;
+	  	/////////////////////////////////////////////////////////////////&#xd;
+	  	//		ATRIBUINDO FAIXA DE VALORES PARA APROVAÇÃO		 	   //&#xd;
+	  	/////////////////////////////////////////////////////////////////&#xd;
+		// Atenção - Quando o valor for superior ao limite definido será direcionado para VPF, então a variavel ccusto receberá o valor da VPF&#xd;
+		&#xd;
+        // 1º Retirando o elemento 2º Retirando o conteúdo&#xd;
+        var nodes = xmlResponse.getElementsByTagName(&quot;VALORLIQUIDO&quot;);&#xd;
+        var VALORLIQUIDO = nodes.item(0).getTextContent();&#xd;
+        &#xd;
+        &#xd;
+	  	if (parseFloat(VALORLIQUIDO) &gt; parseFloat(&apos;152042.0000&apos;)) {&#xd;
+	  		ccusto = &apos;18.01.02.01.58001&apos; ; // 18.01.02.01.58001 - Gabinete da Vice-Presidência Financeira - RJ&#xd;
+	  		log.info(&quot;==========[ VALORLIQUIDO &gt; 152042.0000 -&gt; ccusto =  ]========== &quot; + ccusto);&#xd;
+	  	} &#xd;
+	  		&#xd;
+		&#xd;
 	  	/////////////////////////////////////////////&#xd;
 	  	//		ATRIBUINDO GRUPO AUTORIZADOR 	   //&#xd;
 	  	/////////////////////////////////////////////&#xd;
@@ -1180,24 +931,6 @@ function atualizaEtapaWorkflow(){&#xd;
 		hAPI.setCardValue(&quot;autorizador&quot;, autorizador);&#xd;
 		&#xd;
 		&#xd;
-	  	/////////////////////////////////////////////////////////////////&#xd;
-	  	//		ATRIBUINDO FAIXA DE VALORES PARA APROVAÇÃO		 	   //&#xd;
-	  	/////////////////////////////////////////////////////////////////&#xd;
-		&#xd;
-        // 1º Retirando o elemento 2º Retirando o conteúdo&#xd;
-        var nodes = xmlResponse.getElementsByTagName(&quot;VALORLIQUIDO&quot;);&#xd;
-        var VALORLIQUIDO = nodes.item(0).getTextContent();&#xd;
-		&#xd;
-&#xd;
-	  	if (parseFloat(VALORLIQUIDO) &gt; parseFloat(&apos;152042.0000&apos;)) //if (parseFloat(VALORLIQUIDO) &gt; parseFloat(&apos;115070.6000&apos;))&#xd;
-     	 	var faixa = &apos;2&apos;;&#xd;
-	  	else  	&#xd;
-     	 	var faixa = &apos;1&apos;;&#xd;
-&#xd;
-    &#xd;
-    	// Gravando retorno no formulário		&#xd;
-		hAPI.setCardValue(&quot;nivelAprov&quot;, faixa);&#xd;
-&#xd;
 		}&#xd;
 	&#xd;
 	catch (e)&#xd;
@@ -1214,7 +947,7 @@ function atualizaEtapaWorkflow(){&#xd;
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
         <propertyId>AutomaticTasks</propertyId>
-        <version>21</version>
+        <version>22</version>
       </advancedProcessPropertiesPK>
       <propertieValue></propertieValue>
     </AdvancedProcessProperties>
@@ -1222,11 +955,11 @@ function atualizaEtapaWorkflow(){&#xd;
   <list>
     <SwimLane>
       <color>FFFFFF</color>
-      <height>232</height>
+      <height>316</height>
       <width>959</width>
       <positionX>2</positionX>
       <positionY>135</positionY>
-      <stateName>Gestor Centro de Custo</stateName>
+      <stateName>Autorizadores</stateName>
       <type>2</type>
       <parentSequence>0</parentSequence>
       <swimLanePK>
@@ -1234,6 +967,38 @@ function atualizaEtapaWorkflow(){&#xd;
         <processId>SolOutEntradas</processId>
         <version>1</version>
         <sequence>1</sequence>
+      </swimLanePK>
+    </SwimLane>
+    <SwimLane>
+      <color>A7FCC0</color>
+      <height>147</height>
+      <width>459</width>
+      <positionX>2</positionX>
+      <positionY>450</positionY>
+      <stateName>Aprovar</stateName>
+      <type>2</type>
+      <parentSequence>0</parentSequence>
+      <swimLanePK>
+        <companyId>1</companyId>
+        <processId>SolOutEntradas</processId>
+        <version>1</version>
+        <sequence>2</sequence>
+      </swimLanePK>
+    </SwimLane>
+    <SwimLane>
+      <color>82b0b7</color>
+      <height>147</height>
+      <width>503</width>
+      <positionX>460</positionX>
+      <positionY>450</positionY>
+      <stateName>Reprovar</stateName>
+      <type>2</type>
+      <parentSequence>0</parentSequence>
+      <swimLanePK>
+        <companyId>1</companyId>
+        <processId>SolOutEntradas</processId>
+        <version>1</version>
+        <sequence>3</sequence>
       </swimLanePK>
     </SwimLane>
     <SwimLane>
@@ -1249,63 +1014,15 @@ function atualizaEtapaWorkflow(){&#xd;
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
         <version>1</version>
-        <sequence>2</sequence>
-      </swimLanePK>
-    </SwimLane>
-    <SwimLane>
-      <color>82b0b7</color>
-      <height>147</height>
-      <width>503</width>
-      <positionX>460</positionX>
-      <positionY>761</positionY>
-      <stateName>Reprovar</stateName>
-      <type>2</type>
-      <parentSequence>0</parentSequence>
-      <swimLanePK>
-        <companyId>1</companyId>
-        <processId>SolOutEntradas</processId>
-        <version>1</version>
-        <sequence>3</sequence>
-      </swimLanePK>
-    </SwimLane>
-    <SwimLane>
-      <color>A7FCC0</color>
-      <height>147</height>
-      <width>459</width>
-      <positionX>2</positionX>
-      <positionY>761</positionY>
-      <stateName>Aprovar</stateName>
-      <type>2</type>
-      <parentSequence>0</parentSequence>
-      <swimLanePK>
-        <companyId>1</companyId>
-        <processId>SolOutEntradas</processId>
-        <version>1</version>
         <sequence>4</sequence>
-      </swimLanePK>
-    </SwimLane>
-    <SwimLane>
-      <color>FFFFFF</color>
-      <height>395</height>
-      <width>959</width>
-      <positionX>2</positionX>
-      <positionY>367</positionY>
-      <stateName>Autorizadores</stateName>
-      <type>2</type>
-      <parentSequence>0</parentSequence>
-      <swimLanePK>
-        <companyId>1</companyId>
-        <processId>SolOutEntradas</processId>
-        <version>1</version>
-        <sequence>5</sequence>
       </swimLanePK>
     </SwimLane>
   </list>
   <list>
     <ProcessComponGraf>
       <componType>1</componType>
-      <positionX>40</positionX>
-      <positionY>820</positionY>
+      <positionX>60</positionX>
+      <positionY>470</positionY>
       <processComponGrafPK>
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
@@ -1316,8 +1033,8 @@ function atualizaEtapaWorkflow(){&#xd;
     </ProcessComponGraf>
     <ProcessComponGraf>
       <componType>1</componType>
-      <positionX>650</positionX>
-      <positionY>835</positionY>
+      <positionX>520</positionX>
+      <positionY>470</positionY>
       <processComponGrafPK>
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
@@ -1376,199 +1093,144 @@ function atualizaEtapaWorkflow(){&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
-        <version>21</version>
+        <version>22</version>
         <linkSequence>126</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
-      <positionX>64</positionX>
-      <positionY>501</positionY>
+      <positionX>584</positionX>
+      <positionY>371</positionY>
     </ProcessLinkBend>
     <ProcessLinkBend>
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
-        <version>21</version>
-        <linkSequence>126</linkSequence>
-        <bendSequence>2</bendSequence>
-      </processLinkBendPK>
-      <positionX>64</positionX>
-      <positionY>594</positionY>
-    </ProcessLinkBend>
-    <ProcessLinkBend>
-      <processLinkBendPK>
-        <companyId>1</companyId>
-        <processId>SolOutEntradas</processId>
-        <version>21</version>
-        <linkSequence>142</linkSequence>
+        <version>22</version>
+        <linkSequence>143</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
-      <positionX>448</positionX>
-      <positionY>621</positionY>
+      <positionX>578</positionX>
+      <positionY>374</positionY>
     </ProcessLinkBend>
     <ProcessLinkBend>
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
-        <version>21</version>
-        <linkSequence>154</linkSequence>
-        <bendSequence>1</bendSequence>
-      </processLinkBendPK>
-      <positionX>565</positionX>
-      <positionY>491</positionY>
-    </ProcessLinkBend>
-    <ProcessLinkBend>
-      <processLinkBendPK>
-        <companyId>1</companyId>
-        <processId>SolOutEntradas</processId>
-        <version>21</version>
-        <linkSequence>154</linkSequence>
-        <bendSequence>2</bendSequence>
-      </processLinkBendPK>
-      <positionX>565</positionX>
-      <positionY>397</positionY>
-    </ProcessLinkBend>
-    <ProcessLinkBend>
-      <processLinkBendPK>
-        <companyId>1</companyId>
-        <processId>SolOutEntradas</processId>
-        <version>21</version>
-        <linkSequence>154</linkSequence>
-        <bendSequence>3</bendSequence>
-      </processLinkBendPK>
-      <positionX>32</positionX>
-      <positionY>397</positionY>
-    </ProcessLinkBend>
-    <ProcessLinkBend>
-      <processLinkBendPK>
-        <companyId>1</companyId>
-        <processId>SolOutEntradas</processId>
-        <version>21</version>
-        <linkSequence>154</linkSequence>
-        <bendSequence>4</bendSequence>
-      </processLinkBendPK>
-      <positionX>32</positionX>
-      <positionY>632</positionY>
-    </ProcessLinkBend>
-    <ProcessLinkBend>
-      <processLinkBendPK>
-        <companyId>1</companyId>
-        <processId>SolOutEntradas</processId>
-        <version>21</version>
-        <linkSequence>156</linkSequence>
-        <bendSequence>1</bendSequence>
-      </processLinkBendPK>
-      <positionX>100</positionX>
-      <positionY>105</positionY>
-    </ProcessLinkBend>
-    <ProcessLinkBend>
-      <processLinkBendPK>
-        <companyId>1</companyId>
-        <processId>SolOutEntradas</processId>
-        <version>21</version>
-        <linkSequence>157</linkSequence>
-        <bendSequence>1</bendSequence>
-      </processLinkBendPK>
-      <positionX>580</positionX>
-      <positionY>193</positionY>
-    </ProcessLinkBend>
-    <ProcessLinkBend>
-      <processLinkBendPK>
-        <companyId>1</companyId>
-        <processId>SolOutEntradas</processId>
-        <version>21</version>
-        <linkSequence>157</linkSequence>
-        <bendSequence>2</bendSequence>
-      </processLinkBendPK>
-      <positionX>629</positionX>
-      <positionY>193</positionY>
-    </ProcessLinkBend>
-    <ProcessLinkBend>
-      <processLinkBendPK>
-        <companyId>1</companyId>
-        <processId>SolOutEntradas</processId>
-        <version>21</version>
-        <linkSequence>157</linkSequence>
-        <bendSequence>3</bendSequence>
-      </processLinkBendPK>
-      <positionX>725</positionX>
-      <positionY>193</positionY>
-    </ProcessLinkBend>
-    <ProcessLinkBend>
-      <processLinkBendPK>
-        <companyId>1</companyId>
-        <processId>SolOutEntradas</processId>
-        <version>21</version>
-        <linkSequence>157</linkSequence>
-        <bendSequence>4</bendSequence>
-      </processLinkBendPK>
-      <positionX>916</positionX>
-      <positionY>193</positionY>
-    </ProcessLinkBend>
-    <ProcessLinkBend>
-      <processLinkBendPK>
-        <companyId>1</companyId>
-        <processId>SolOutEntradas</processId>
-        <version>21</version>
-        <linkSequence>157</linkSequence>
-        <bendSequence>5</bendSequence>
-      </processLinkBendPK>
-      <positionX>916</positionX>
-      <positionY>361</positionY>
-    </ProcessLinkBend>
-    <ProcessLinkBend>
-      <processLinkBendPK>
-        <companyId>1</companyId>
-        <processId>SolOutEntradas</processId>
-        <version>21</version>
-        <linkSequence>157</linkSequence>
-        <bendSequence>6</bendSequence>
-      </processLinkBendPK>
-      <positionX>916</positionX>
-      <positionY>759</positionY>
-    </ProcessLinkBend>
-    <ProcessLinkBend>
-      <processLinkBendPK>
-        <companyId>1</companyId>
-        <processId>SolOutEntradas</processId>
-        <version>21</version>
+        <version>22</version>
         <linkSequence>162</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
-      <positionX>524</positionX>
-      <positionY>572</positionY>
+      <positionX>903</positionX>
+      <positionY>212</positionY>
     </ProcessLinkBend>
     <ProcessLinkBend>
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
-        <version>21</version>
-        <linkSequence>163</linkSequence>
-        <bendSequence>1</bendSequence>
-      </processLinkBendPK>
-      <positionX>861</positionX>
-      <positionY>493</positionY>
-    </ProcessLinkBend>
-    <ProcessLinkBend>
-      <processLinkBendPK>
-        <companyId>1</companyId>
-        <processId>SolOutEntradas</processId>
-        <version>21</version>
-        <linkSequence>163</linkSequence>
+        <version>22</version>
+        <linkSequence>162</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
-      <positionX>861</positionX>
-      <positionY>673</positionY>
+      <positionX>903</positionX>
+      <positionY>524</positionY>
     </ProcessLinkBend>
     <ProcessLinkBend>
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
-        <version>21</version>
+        <version>22</version>
         <linkSequence>169</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
-      <positionX>221</positionX>
-      <positionY>191</positionY>
+      <positionX>110</positionX>
+      <positionY>50</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>SolOutEntradas</processId>
+        <version>22</version>
+        <linkSequence>170</linkSequence>
+        <bendSequence>1</bendSequence>
+      </processLinkBendPK>
+      <positionX>110</positionX>
+      <positionY>353</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>SolOutEntradas</processId>
+        <version>22</version>
+        <linkSequence>170</linkSequence>
+        <bendSequence>2</bendSequence>
+      </processLinkBendPK>
+      <positionX>560</positionX>
+      <positionY>353</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>SolOutEntradas</processId>
+        <version>22</version>
+        <linkSequence>170</linkSequence>
+        <bendSequence>3</bendSequence>
+      </processLinkBendPK>
+      <positionX>560</positionX>
+      <positionY>212</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>SolOutEntradas</processId>
+        <version>22</version>
+        <linkSequence>172</linkSequence>
+        <bendSequence>1</bendSequence>
+      </processLinkBendPK>
+      <positionX>497</positionX>
+      <positionY>147</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>SolOutEntradas</processId>
+        <version>22</version>
+        <linkSequence>172</linkSequence>
+        <bendSequence>2</bendSequence>
+      </processLinkBendPK>
+      <positionX>910</positionX>
+      <positionY>147</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>SolOutEntradas</processId>
+        <version>22</version>
+        <linkSequence>172</linkSequence>
+        <bendSequence>3</bendSequence>
+      </processLinkBendPK>
+      <positionX>910</positionX>
+      <positionY>524</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>SolOutEntradas</processId>
+        <version>22</version>
+        <linkSequence>173</linkSequence>
+        <bendSequence>1</bendSequence>
+      </processLinkBendPK>
+      <positionX>907</positionX>
+      <positionY>375</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>SolOutEntradas</processId>
+        <version>22</version>
+        <linkSequence>173</linkSequence>
+        <bendSequence>2</bendSequence>
+      </processLinkBendPK>
+      <positionX>907</positionX>
+      <positionY>524</positionY>
     </ProcessLinkBend>
   </list>
   <list/>
@@ -1577,7 +1239,7 @@ function atualizaEtapaWorkflow(){&#xd;
       <extendedPropertyFieldPK>
         <companyId>1</companyId>
         <processId>SolOutEntradas</processId>
-        <version>21</version>
+        <version>22</version>
         <stateSequence>0</stateSequence>
         <propertyName>AutomaticTasks</propertyName>
       </extendedPropertyFieldPK>
@@ -1595,7 +1257,7 @@ function atualizaEtapaWorkflow(){&#xd;
       <id>0</id>
       <tenantId>0</tenantId>
       <processId>SolOutEntradas</processId>
-      <processVersion>21</processVersion>
+      <processVersion>22</processVersion>
       <stateSequence>116</stateSequence>
       <appKey>approval</appKey>
       <appField>title</appField>
@@ -1605,7 +1267,7 @@ function atualizaEtapaWorkflow(){&#xd;
       <id>0</id>
       <tenantId>0</tenantId>
       <processId>SolOutEntradas</processId>
-      <processVersion>21</processVersion>
+      <processVersion>22</processVersion>
       <stateSequence>116</stateSequence>
       <appKey>approval</appKey>
       <appField>highlight</appField>
@@ -1615,7 +1277,7 @@ function atualizaEtapaWorkflow(){&#xd;
       <id>0</id>
       <tenantId>0</tenantId>
       <processId>SolOutEntradas</processId>
-      <processVersion>21</processVersion>
+      <processVersion>22</processVersion>
       <stateSequence>116</stateSequence>
       <appKey>approval</appKey>
       <appField>approve</appField>
@@ -1625,26 +1287,17 @@ function atualizaEtapaWorkflow(){&#xd;
   <list/>
   <list>
     <ConditionProcessAutomaticRules>
-      <sequence>147</sequence>
+      <sequence>164</sequence>
       <expressionOrder>1</expressionOrder>
       <ruleOrder>1</ruleOrder>
-      <field>nivelAprov</field>
-      <value>2</value>
+      <field>autorizador</field>
+      <value>gestorcc</value>
       <operator>1</operator>
-      <valueType>1</valueType>
-    </ConditionProcessAutomaticRules>
-    <ConditionProcessAutomaticRules>
-      <sequence>147</sequence>
-      <expressionOrder>2</expressionOrder>
-      <ruleOrder>1</ruleOrder>
-      <field>nivelAprov</field>
-      <value>1</value>
-      <operator>1</operator>
-      <valueType>1</valueType>
+      <valueType>0</valueType>
     </ConditionProcessAutomaticRules>
     <ConditionProcessAutomaticRules>
       <sequence>164</sequence>
-      <expressionOrder>1</expressionOrder>
+      <expressionOrder>2</expressionOrder>
       <ruleOrder>1</ruleOrder>
       <field>analiseObrigatoria</field>
       <value>0</value>
@@ -1653,7 +1306,7 @@ function atualizaEtapaWorkflow(){&#xd;
     </ConditionProcessAutomaticRules>
     <ConditionProcessAutomaticRules>
       <sequence>164</sequence>
-      <expressionOrder>2</expressionOrder>
+      <expressionOrder>3</expressionOrder>
       <ruleOrder>1</ruleOrder>
       <field>analiseObrigatoria</field>
       <value>1</value>
