@@ -142,42 +142,51 @@ function atualizaEtapaWorkflow(){
 		
 	
 		
-
-	  	/////////////////////////////////////////////////////////////////
-	  	//		ATRIBUINDO FAIXA DE VALORES PARA APROVAÇÃO		 	   //
-	  	/////////////////////////////////////////////////////////////////
-		// Atenção - Quando o valor for superior ao limite definido será direcionado para VPF, então a variavel ccusto receberá o valor da VPF
-		
-        // 1º Retirando o elemento 2º Retirando o conteúdo
-        var nodes = xmlResponse.getElementsByTagName("VALORLIQUIDO");
-        var VALORLIQUIDO = nodes.item(0).getTextContent();
-        
-        
-	  	if (parseFloat(VALORLIQUIDO) > parseFloat('152042.0000')) {
-	  		ccusto = '18.01.02.01.58001' ; // 18.01.02.01.58001 - Gabinete da Vice-Presidência Financeira - RJ
-	  		log.info("==========[ VALORLIQUIDO > 152042.0000 -> ccusto =  ]========== " + ccusto);
-	  	} 
-	  		
-		
 	  	/////////////////////////////////////////////
 	  	//		ATRIBUINDO GRUPO AUTORIZADOR 	   //
 	  	/////////////////////////////////////////////
 		
-        // Rodando novo dataset para coletar responsável do centro de custo
-        var a1 = DatasetFactory.createConstraint("CODCCUSTO", ccusto, ccusto, ConstraintType.MUST);
-        var constraints = new Array(a1);
-        log.info("==========[ selecionaAutorizador constraints ]========== " + constraints);
+        // Retirando o elemento e na sequencia retirando o conteúdo
+        var nodes = xmlResponse.getElementsByTagName("VALORLIQUIDO");
+        var VALORLIQUIDO = nodes.item(0).getTextContent();
+        log.info("==========[ selecionaAutorizador VALORLIQUIDO ]========== " + VALORLIQUIDO);
         
-        // Executando chamada de dataset
-        var datasetReturn = DatasetFactory.getDataset("_RM_CCUSTO_AUTORIZADOR", null, constraints, null);
+        var retorno = AutorizadoresLimites(ccusto);
+        
+        var arrayRetorno = retorno.split(' , ');
+
+        // Retirando limite do resultado
+        var limite = arrayRetorno[1];
+		log.info("==========[ selecionaAutorizador limite ]========== " + limite); 
 		
-		// Retirando o campo do resultado
-        var autorizador = datasetReturn.getValue(0, "");
-		log.info("==========[ selecionaAutorizador autorizador ]========== " + autorizador); 
-    	
-    	// Gravando retorno no formulário		
-		hAPI.setCardValue("autorizador", autorizador);
 		
+		if (limite == '0.0000')  { // Já esta para VPF
+			
+	        // Retirando autorizador do resultado
+	        var autorizador = arrayRetorno[0];
+			log.info("==========[ selecionaAutorizador autorizador limite == 0.0000 ]========== " + autorizador); 
+	    	// Gravando retorno no formulário		
+			hAPI.setCardValue("autorizador", autorizador);
+		}
+		
+		else if (parseFloat(VALORLIQUIDO) > parseFloat(limite)) {
+			
+			// 18.01.02.01.58001 - Gabinete da Vice-Presidência Financeira - RJ
+			ccusto = '18.01.02.01.58001' ; 
+			var retorno_VPF = AutorizadoresLimites(ccusto);
+			var arrayRetorno_VPF = retorno_VPF.split(' , ');
+			var autorizador_VPF = arrayRetorno_VPF[0];
+	    	// Gravando retorno no formulário		
+			hAPI.setCardValue("autorizador", autorizador_VPF);
+			log.info("==========[ selecionaAutorizador autorizador (parseFloat(VALORLIQUIDO) > parseFloat(limite)) autorizador_VPF ]========== " + autorizador_VPF); 
+		}
+		else {
+			
+			var autorizador = arrayRetorno[0];
+	    	// Gravando retorno no formulário		
+			hAPI.setCardValue("autorizador", autorizador);
+			log.info("==========[ selecionaAutorizador autorizador else ]========== " + autorizador); 
+		}
 		
 		}
 	
@@ -186,4 +195,29 @@ function atualizaEtapaWorkflow(){
 		log.error(e);
 		throw e;
 	}
+}
+
+function AutorizadoresLimites(ccusto){
+	try {
+		// Rodando novo dataset para coletar responsável do centro de custo
+	    var a1 = DatasetFactory.createConstraint("CODCCUSTO", ccusto, ccusto, ConstraintType.MUST);
+	    var constraints = new Array(a1);
+	    log.info("==========[ function AutorizadoresLimites constraints ]========== " + constraints);
+	    
+	    // Executando chamada de dataset
+	    var datasetReturn = DatasetFactory.getDataset("_RM_CCUSTO_AUTORIZADORLIMITE", null, constraints, null);
+
+		// Retirando o campo do resultado
+	    var retorno = datasetReturn.getValue(0, "");
+		log.info("==========[ function AutorizadoresLimites retorno ]========== " + retorno); 
+		
+		return retorno;
+		
+	}
+	catch (e)
+	{
+		log.error(e);
+		throw e;
+	}
+	
 }

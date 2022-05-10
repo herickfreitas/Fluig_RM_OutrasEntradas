@@ -5,7 +5,7 @@ function createDataset(fields, constraints, sortFields) {
     var ds = ic.lookup(dataSource);
     var created = false;
     
-    log.info("QUERY constraints: " + constraints);
+    log.info("_RM_CCUSTO_AUTORIZADORLIMITE - QUERY constraints : " + constraints);
     
     var processo = "";
     for (var i = 0; i < constraints.length; i++) {
@@ -15,8 +15,8 @@ function createDataset(fields, constraints, sortFields) {
     }
  
         
-    var myQuery = "SELECT [dbo].[Fluig_Autorizadores] ( "+"'"+processo+"'"+")";
-    log.info("QUERY Fluig_Autorizadores: " + myQuery);
+    var myQuery = "SELECT [dbo].[Fluig_AutorizadoresLimites] ( "+"'"+processo+"'"+")";
+    log.info("QUERY Fluig_AutorizadoresLimites: " + myQuery);
     try {
         var conn = ds.getConnection();
         var stmt = conn.createStatement();
